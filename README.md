@@ -1,2 +1,3 @@
 # npu_dla
-ai chip course lab
+lab for AI chip course 
+## member:Yiheng Wang(leader)、Chongyu Wang、Lebin Liang
