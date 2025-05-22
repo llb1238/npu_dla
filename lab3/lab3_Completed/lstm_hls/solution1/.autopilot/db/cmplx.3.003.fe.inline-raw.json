@@ -1,0 +1,64 @@
+{
+  "0": {
+    "basicblocks": 5,
+    "calls": "2",
+    "file": "rnn_top.cpp",
+    "fileloc": 37,
+    "instructions": 48,
+    "loads": {
+      "L": 1
+    },
+    "name": "LSTM_Top",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 1392
+  },
+  "1": {
+    "basicblocks": 19,
+    "calls": "",
+    "file": "hls_exp_.h",
+    "fileloc": 156,
+    "instructions": 351,
+    "loads": {
+      "G": 4,
+      "L": 29
+    },
+    "name": "exp_generic<double>",
+    "stores": {
+      "L": 27
+    },
+    "total_instructions": 351
+  },
+  "2": {
+    "basicblocks": 79,
+    "calls": "3 3",
+    "file": "rnn.cpp",
+    "fileloc": 46,
+    "instructions": 394,
+    "loads": {
+      "G": 10,
+      "L": 31
+    },
+    "name": "infer",
+    "stores": {
+      "L": 33
+    },
+    "total_instructions": 1344
+  },
+  "3": {
+    "basicblocks": 14,
+    "calls": "1",
+    "file": "hls_tanh.h",
+    "fileloc": 28,
+    "instructions": 124,
+    "loads": {
+      "L": 10
+    },
+    "name": "generic_tanh<float>",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 475
+  }
+}

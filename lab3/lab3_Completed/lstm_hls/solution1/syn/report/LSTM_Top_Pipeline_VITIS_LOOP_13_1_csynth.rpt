@@ -1,0 +1,184 @@
+
+
+================================================================
+== Vitis HLS Report for 'LSTM_Top_Pipeline_VITIS_LOOP_13_1'
+================================================================
+* Date:           Thu May 22 16:58:32 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        lstm_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  6.562 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |      802|      802|  8.020 us|  8.020 us|  785|  785|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_13_1  |      800|      800|        18|          1|          1|   784|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|     30|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       0|     45|    -|
+|Register         |        -|    -|     152|     32|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     152|    107|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +---------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name       | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |add_ln13_fu_82_p2          |         +|   0|  0|  13|          10|           1|
+    |ap_block_pp0_stage0_11001  |       and|   0|  0|   2|           1|           1|
+    |icmp_ln13_fu_76_p2         |      icmp|   0|  0|  13|          10|           9|
+    |ap_enable_pp0              |       xor|   0|  0|   2|           1|           2|
+    +---------------------------+----------+----+---+----+------------+------------+
+    |Total                      |          |   0|  0|  30|          22|          13|
+    +---------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------------+----+-----------+-----+-----------+
+    |           Name          | LUT| Input Size| Bits| Total Bits|
+    +-------------------------+----+-----------+-----+-----------+
+    |ap_done_int              |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1  |   9|          2|    1|          2|
+    |ap_sig_allocacmp_i_11    |   9|          2|   10|         20|
+    |i_fu_40                  |   9|          2|   10|         20|
+    |in_r_TDATA_blk_n         |   9|          2|    1|          2|
+    +-------------------------+----+-----------+-----+-----------+
+    |Total                    |  45|         10|   23|         46|
+    +-------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------------------+----+----+-----+-----------+
+    |                    Name                   | FF | LUT| Bits| Const Bits|
+    +-------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                  |   1|   0|    1|          0|
+    |ap_block_pp0_stage0_subdone_grp0_done_reg  |   1|   0|    1|          0|
+    |ap_done_reg                                |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1                    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter10                   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter11                   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter12                   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter13                   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter14                   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter15                   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter16                   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter17                   |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2                    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter3                    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter4                    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter5                    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter6                    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter7                    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter8                    |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter9                    |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter10_reg          |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter11_reg          |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter12_reg          |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter13_reg          |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter14_reg          |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter15_reg          |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter16_reg          |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter2_reg           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter3_reg           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter4_reg           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter5_reg           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter6_reg           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter7_reg           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter8_reg           |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter9_reg           |   1|   0|    1|          0|
+    |div_i_reg_127                              |  32|   0|   32|          0|
+    |i_11_reg_113                               |  10|   0|   10|          0|
+    |i_fu_40                                    |  10|   0|   10|          0|
+    |i_11_reg_113                               |  64|  32|   10|          0|
+    +-------------------------------------------+----+----+-----+-----------+
+    |Total                                      | 152|  32|   98|          0|
+    +-------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++--------------------+-----+-----+------------+-----------------------------------+--------------+
+|      RTL Ports     | Dir | Bits|  Protocol  |           Source Object           |    C Type    |
++--------------------+-----+-----+------------+-----------------------------------+--------------+
+|ap_clk              |   in|    1|  ap_ctrl_hs|  LSTM_Top_Pipeline_VITIS_LOOP_13_1|  return value|
+|ap_rst              |   in|    1|  ap_ctrl_hs|  LSTM_Top_Pipeline_VITIS_LOOP_13_1|  return value|
+|ap_start            |   in|    1|  ap_ctrl_hs|  LSTM_Top_Pipeline_VITIS_LOOP_13_1|  return value|
+|ap_done             |  out|    1|  ap_ctrl_hs|  LSTM_Top_Pipeline_VITIS_LOOP_13_1|  return value|
+|ap_idle             |  out|    1|  ap_ctrl_hs|  LSTM_Top_Pipeline_VITIS_LOOP_13_1|  return value|
+|ap_ready            |  out|    1|  ap_ctrl_hs|  LSTM_Top_Pipeline_VITIS_LOOP_13_1|  return value|
+|grp_fu_114_p_din0   |  out|   32|  ap_ctrl_hs|  LSTM_Top_Pipeline_VITIS_LOOP_13_1|  return value|
+|grp_fu_114_p_din1   |  out|   32|  ap_ctrl_hs|  LSTM_Top_Pipeline_VITIS_LOOP_13_1|  return value|
+|grp_fu_114_p_dout0  |   in|   32|  ap_ctrl_hs|  LSTM_Top_Pipeline_VITIS_LOOP_13_1|  return value|
+|grp_fu_114_p_ce     |  out|    1|  ap_ctrl_hs|  LSTM_Top_Pipeline_VITIS_LOOP_13_1|  return value|
+|in_r_TVALID         |   in|    1|        axis|                               in_r|       pointer|
+|in_r_TDATA          |   in|   96|        axis|                               in_r|       pointer|
+|in_r_TREADY         |  out|    1|        axis|                               in_r|       pointer|
+|img_dat_address0    |  out|   10|   ap_memory|                            img_dat|         array|
+|img_dat_ce0         |  out|    1|   ap_memory|                            img_dat|         array|
+|img_dat_we0         |  out|    1|   ap_memory|                            img_dat|         array|
+|img_dat_d0          |  out|   32|   ap_memory|                            img_dat|         array|
++--------------------+-----+-----+------------+-----------------------------------+--------------+
+

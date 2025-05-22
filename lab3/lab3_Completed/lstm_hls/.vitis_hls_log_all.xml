@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog>
+        <logs message="ERROR: [COSIM 212-4] *** C/RTL co-simulation finished: FAIL ***" projectName="lstm_hls" solutionName="solution1" date="2025-05-22T16:58:59.988+0800"/>
+        <logs message="ERROR: [COSIM 212-5] *** C/RTL co-simulation file generation failed. ***" projectName="lstm_hls" solutionName="solution1" date="2025-05-22T16:58:59.936+0800"/>
+        <logs message="ERROR: [COSIM 212-331] Aborting co-simulation: C simulation failed, compilation errors." projectName="lstm_hls" solutionName="solution1" date="2025-05-22T16:58:59.933+0800"/>
+        <logs message="ERROR: [COSIM 212-321] EXE file generate failed." projectName="lstm_hls" solutionName="solution1" date="2025-05-22T16:58:59.875+0800"/>
+        <logs message="ERROR: [COSIM 212-317] C++ compile error." projectName="lstm_hls" solutionName="solution1" date="2025-05-22T16:58:59.873+0800"/>
+      </simLog>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog/>
+      <simLog>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -location' command is deprecated and will be removed in a future release." projectName="lstm_hls" solutionName="solution1" date="2025-05-22T16:58:51.973+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -name' command is deprecated and will be removed in a future release." projectName="lstm_hls" solutionName="solution1" date="2025-05-22T16:58:51.970+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl&#xA;Sourcing Tcl script '/home/llb/college/dla/npu_dla/lab3_student/lstm_hls/solution1/cosim.tcl'" projectName="lstm_hls" solutionName="solution1" date="2025-05-22T16:58:51.268+0800" type="Warning"/>
+      </simLog>
+      <mgLog/>
+      <packageLog>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -location' command is deprecated and will be removed in a future release." projectName="lstm_hls" solutionName="solution1" date="2025-05-22T16:59:25.922+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-484] The 'set_directive_top -name' command is deprecated and will be removed in a future release." projectName="lstm_hls" solutionName="solution1" date="2025-05-22T16:59:25.919+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-2053] The vitis_hls executable is deprecated. Consider using vitis-run --mode hls --tcl&#xA;Sourcing Tcl script '/home/llb/college/dla/npu_dla/lab3_student/lstm_hls/solution1/export.tcl'" projectName="lstm_hls" solutionName="solution1" date="2025-05-22T16:59:25.236+0800" type="Warning"/>
+      </packageLog>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>

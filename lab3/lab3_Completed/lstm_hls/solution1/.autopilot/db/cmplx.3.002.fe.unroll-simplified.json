@@ -1,0 +1,361 @@
+{
+  "0": {
+    "basicblocks": 1,
+    "calls": "23",
+    "file": "rnn_top.cpp",
+    "fileloc": 37,
+    "instructions": 5,
+    "name": "LSTM_Top",
+    "total_instructions": 1580
+  },
+  "1": {
+    "basicblocks": 19,
+    "calls": "6 21 2 3 3 3 17 22 3 3 3 3",
+    "file": "hls_exp_.h",
+    "fileloc": 156,
+    "instructions": 151,
+    "loads": {
+      "G": 1,
+      "L": 3
+    },
+    "name": "exp_generic<double>",
+    "stores": {
+      "L": 10
+    },
+    "total_instructions": 376
+  },
+  "10": {
+    "basicblocks": 4,
+    "calls": "",
+    "file": "stl_algobase.h",
+    "fileloc": 749,
+    "instructions": 13,
+    "loads": {
+      "L": 1
+    },
+    "name": "__fill_n_a<float *, int, double>",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 13
+  },
+  "11": {
+    "basicblocks": 1,
+    "calls": "13 24",
+    "file": "hls_copysign.h",
+    "fileloc": 10,
+    "instructions": 7,
+    "name": "generic_copysign<float>",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 31
+  },
+  "12": {
+    "basicblocks": 4,
+    "calls": "13 1",
+    "file": "hls_exp_float.cpp",
+    "fileloc": 7,
+    "instructions": 16,
+    "loads": {
+      "L": 1
+    },
+    "name": "expm1",
+    "total_instructions": 400
+  },
+  "13": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 283,
+    "instructions": 8,
+    "name": "fp_struct",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 8
+  },
+  "14": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "rnn.cpp",
+    "fileloc": 25,
+    "instructions": 12,
+    "loads": {
+      "L": 1
+    },
+    "name": "tanh",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 521
+  },
+  "15": {
+    "basicblocks": 41,
+    "calls": "5 18 26 5 18 26 5 18 14 5 18 26 25 25 18 14 25 5 18",
+    "file": "rnn.cpp",
+    "fileloc": 46,
+    "instructions": 226,
+    "loads": {
+      "G": 5,
+      "L": 13
+    },
+    "name": "infer",
+    "stores": {
+      "L": 14
+    },
+    "total_instructions": 1536
+  },
+  "16": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 309,
+    "instructions": 9,
+    "loads": {
+      "L": 3
+    },
+    "name": "data",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 9
+  },
+  "17": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 485,
+    "instructions": 4,
+    "loads": {
+      "L": 1
+    },
+    "name": "expv",
+    "total_instructions": 4
+  },
+  "18": {
+    "basicblocks": 4,
+    "calls": "",
+    "file": "rnn.cpp",
+    "fileloc": 32,
+    "instructions": 15,
+    "loads": {
+      "L": 2
+    },
+    "name": "geva",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 15
+  },
+  "19": {
+    "basicblocks": 11,
+    "calls": "13 9 27 12",
+    "file": "hls_tanh.h",
+    "fileloc": 28,
+    "instructions": 46,
+    "loads": {
+      "L": 4
+    },
+    "name": "generic_tanh<float>",
+    "total_instructions": 505
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "6",
+    "file": "hls_isinf.h",
+    "fileloc": 16,
+    "instructions": 11,
+    "loads": {
+      "L": 2
+    },
+    "name": "generic_isinf<double>",
+    "total_instructions": 19
+  },
+  "20": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "stl_algobase.h",
+    "fileloc": 277,
+    "instructions": 1,
+    "name": "__niter_base<float *>",
+    "total_instructions": 1
+  },
+  "21": {
+    "basicblocks": 1,
+    "calls": "6",
+    "file": "hls_isnan.h",
+    "fileloc": 16,
+    "instructions": 11,
+    "loads": {
+      "L": 2
+    },
+    "name": "generic_isnan<double>",
+    "total_instructions": 19
+  },
+  "22": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "hls_exp_.h",
+    "fileloc": 90,
+    "instructions": 63,
+    "loads": {
+      "G": 3
+    },
+    "name": "exp_Z1P_m_1",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 63
+  },
+  "23": {
+    "basicblocks": 5,
+    "calls": "15",
+    "file": "rnn_top.cpp",
+    "fileloc": 5,
+    "instructions": 39,
+    "loads": {
+      "L": 1
+    },
+    "name": "mnist_lstm<float, 1, 1, 1>",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 1575
+  },
+  "24": {
+    "basicblocks": 1,
+    "calls": "28",
+    "file": "x_hls_utils.h",
+    "fileloc": 346,
+    "instructions": 2,
+    "name": "to_ieee",
+    "total_instructions": 16
+  },
+  "25": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "rnn.cpp",
+    "fileloc": 39,
+    "instructions": 14,
+    "loads": {
+      "L": 2
+    },
+    "name": "hprod",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 14
+  },
+  "26": {
+    "basicblocks": 3,
+    "calls": "",
+    "file": "rnn.cpp",
+    "fileloc": 18,
+    "instructions": 15,
+    "loads": {
+      "L": 1
+    },
+    "name": "sigmoid",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 17
+  },
+  "27": {
+    "basicblocks": 1,
+    "calls": "24",
+    "file": "hls_nan.h",
+    "fileloc": 10,
+    "instructions": 2,
+    "name": "generic_nan<float>",
+    "total_instructions": 18
+  },
+  "28": {
+    "basicblocks": 1,
+    "calls": "16",
+    "file": "x_hls_utils.h",
+    "fileloc": 322,
+    "instructions": 5,
+    "loads": {
+      "L": 1
+    },
+    "name": "to_float",
+    "total_instructions": 14
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "7",
+    "file": "x_hls_utils.h",
+    "fileloc": 509,
+    "instructions": 2,
+    "name": "to_ieee",
+    "total_instructions": 16
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "19",
+    "file": "tanhfloat.cpp",
+    "fileloc": 7,
+    "instructions": 2,
+    "name": "tanhf",
+    "total_instructions": 507
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "20 10",
+    "file": "stl_algobase.h",
+    "fileloc": 784,
+    "instructions": 3,
+    "name": "fill_n<float *, int, double>",
+    "total_instructions": 17
+  },
+  "6": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 456,
+    "instructions": 8,
+    "name": "fp_struct",
+    "stores": {
+      "L": 3
+    },
+    "total_instructions": 8
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "8",
+    "file": "x_hls_utils.h",
+    "fileloc": 494,
+    "instructions": 5,
+    "loads": {
+      "L": 1
+    },
+    "name": "to_double",
+    "total_instructions": 14
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "x_hls_utils.h",
+    "fileloc": 475,
+    "instructions": 9,
+    "loads": {
+      "L": 3
+    },
+    "name": "data",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 9
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "11",
+    "file": "hls_fabs.h",
+    "fileloc": 12,
+    "instructions": 2,
+    "name": "generic_fabs<float>",
+    "total_instructions": 33
+  }
+}

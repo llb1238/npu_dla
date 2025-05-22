@@ -1,0 +1,148 @@
+
+
+================================================================
+== Vitis HLS Report for 'LSTM_Top_Pipeline_VITIS_LOOP_27_2'
+================================================================
+* Date:           Thu May 22 16:58:32 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        lstm_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.911 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+    |       12|       12|  0.120 us|  0.120 us|   11|   11|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |                   |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        |     Loop Name     |   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+        |- VITIS_LOOP_27_2  |       10|       10|         2|          1|          1|    10|       yes|
+        +-------------------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.91>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%i = alloca i32 1" [lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43]   --->   Operation 5 'alloca' 'i' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i96 %out_r, void @empty_1, i32 0, i32 0, void @empty_12, i32 0, i32 0, void @empty_0, void @empty_0, void @empty_0, i32 0, i32 0, i32 0, i32 0, void @empty_0, void @empty_0, i32 4294967295, i32 0, i32 0"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (1.58ns)   --->   "%store_ln27 = store i4 0, i4 %i" [lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43]   --->   Operation 7 'store' 'store_ln27' <Predicate = true> <Delay = 1.58>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%br_ln0 = br void %for.inc18.i"   --->   Operation 8 'br' 'br_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%i_10 = load i4 %i" [lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43]   --->   Operation 9 'load' 'i_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (1.73ns)   --->   "%icmp_ln27 = icmp_eq  i4 %i_10, i4 10" [lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43]   --->   Operation 10 'icmp' 'icmp_ln27' <Predicate = true> <Delay = 1.73> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 11 [1/1] (1.73ns)   --->   "%add_ln27 = add i4 %i_10, i4 1" [lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43]   --->   Operation 11 'add' 'add_ln27' <Predicate = true> <Delay = 1.73> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%br_ln27 = br i1 %icmp_ln27, void %for.inc18.i.split, void %_Z10mnist_lstmIfLi1ELi1ELi1EEvPN3hls4axisI7ap_uintILi32EELm1ELm1ELm1ELh56ELb0EEES5_.exit.exitStub" [lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43]   --->   Operation 12 'br' 'br_ln27' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%zext_ln27 = zext i4 %i_10" [lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43]   --->   Operation 13 'zext' 'zext_ln27' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%res_addr = getelementptr i32 %res, i64 0, i64 %zext_ln27" [lstm_hls/rnn_top.cpp:30->lstm_hls/rnn_top.cpp:43]   --->   Operation 14 'getelementptr' 'res_addr' <Predicate = (!icmp_ln27)> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (1.73ns)   --->   "%e_last = icmp_eq  i4 %i_10, i4 9" [lstm_hls/rnn_top.cpp:30->lstm_hls/rnn_top.cpp:43]   --->   Operation 15 'icmp' 'e_last' <Predicate = (!icmp_ln27)> <Delay = 1.73> <CoreInst = "Cmp">   --->   Core 9 'Cmp' <Latency = 0> <II = 1> <Delay = 1.73> <FuncUnit> <Opcode : 'seteq' 'setne' 'setle' 'setge' 'setlt' 'setgt'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [2/2] (2.32ns)   --->   "%converter = load i4 %res_addr" [lstm_hls/utils.h:49->lstm_hls/rnn_top.cpp:30->lstm_hls/rnn_top.cpp:43]   --->   Operation 16 'load' 'converter' <Predicate = (!icmp_ln27)> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_1 : Operation 17 [1/1] (1.58ns)   --->   "%store_ln27 = store i4 %add_ln27, i4 %i" [lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43]   --->   Operation 17 'store' 'store_ln27' <Predicate = (!icmp_ln27)> <Delay = 1.58>
+ST_1 : Operation 27 [1/1] (1.58ns)   --->   "%ret_ln0 = ret"   --->   Operation 27 'ret' 'ret_ln0' <Predicate = (icmp_ln27)> <Delay = 1.58>
+
+State 2 <SV = 1> <Delay = 4.09>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%specpipeline_ln29 = specpipeline void @_ssdm_op_SpecPipeline, i32 1, i32 0, i32 0, i32 0, void @empty_0" [lstm_hls/rnn_top.cpp:29->lstm_hls/rnn_top.cpp:43]   --->   Operation 18 'specpipeline' 'specpipeline_ln29' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%speclooptripcount_ln27 = speclooptripcount void @_ssdm_op_SpecLoopTripCount, i64 10, i64 10, i64 10" [lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43]   --->   Operation 19 'speclooptripcount' 'speclooptripcount_ln27' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%specloopname_ln27 = specloopname void @_ssdm_op_SpecLoopName, void @empty_7" [lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43]   --->   Operation 20 'specloopname' 'specloopname_ln27' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/2] ( I:2.32ns O:2.32ns )   --->   "%converter = load i4 %res_addr" [lstm_hls/utils.h:49->lstm_hls/rnn_top.cpp:30->lstm_hls/rnn_top.cpp:43]   --->   Operation 21 'load' 'converter' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM">   --->   Core 81 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 10> <RAM>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%e_data = bitcast i32 %converter" [lstm_hls/utils.h:50->lstm_hls/rnn_top.cpp:30->lstm_hls/rnn_top.cpp:43]   --->   Operation 22 'bitcast' 'e_data' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%or_ln = bitconcatenate i57 @_ssdm_op_BitConcatenate.i57.i1.i24.i32, i1 %e_last, i24 3855, i32 %e_data" [lstm_hls/rnn_top.cpp:30->lstm_hls/rnn_top.cpp:43]   --->   Operation 23 'bitconcatenate' 'or_ln' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%zext_ln30 = zext i57 %or_ln" [lstm_hls/rnn_top.cpp:30->lstm_hls/rnn_top.cpp:43]   --->   Operation 24 'zext' 'zext_ln30' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (1.77ns)   --->   "%write_ln30 = write void @_ssdm_op_Write.axis.volatile.i96P128A, i96 %out_r, i96 %zext_ln30" [lstm_hls/rnn_top.cpp:30->lstm_hls/rnn_top.cpp:43]   --->   Operation 25 'write' 'write_ln30' <Predicate = true> <Delay = 1.77> <CoreInst = "regslice">   --->   Core 135 'regslice' <Latency = 0> <II = 1> <Delay = 2.10> <Adapter> <Opcode : 'read' 'write'>
+ST_2 : Operation 26 [1/1] (0.00ns)   --->   "%br_ln27 = br void %for.inc18.i" [lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43]   --->   Operation 26 'br' 'br_ln27' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 4.911ns
+The critical path consists of the following:
+	'store' operation 0 bit ('store_ln27', lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43) of constant 0 on local variable 'i', lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43 [5]  (1.588 ns)
+	'load' operation 4 bit ('i', lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43) on local variable 'i', lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43 [8]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln27', lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43) [9]  (1.735 ns)
+	'store' operation 0 bit ('store_ln27', lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43) of variable 'add_ln27', lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43 on local variable 'i', lstm_hls/rnn_top.cpp:27->lstm_hls/rnn_top.cpp:43 [24]  (1.588 ns)
+
+ <State 2>: 4.098ns
+The critical path consists of the following:
+	'load' operation 32 bit ('converter', lstm_hls/utils.h:49->lstm_hls/rnn_top.cpp:30->lstm_hls/rnn_top.cpp:43) on array 'res' [19]  (2.322 ns)
+	axis write operation ('write_ln30', lstm_hls/rnn_top.cpp:30->lstm_hls/rnn_top.cpp:43) on port 'out_r' (lstm_hls/rnn_top.cpp:30->lstm_hls/rnn_top.cpp:43) [23]  (1.776 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

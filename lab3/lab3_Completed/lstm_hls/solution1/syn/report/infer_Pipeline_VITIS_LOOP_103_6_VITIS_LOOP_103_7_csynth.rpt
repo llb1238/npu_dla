@@ -1,0 +1,205 @@
+
+
+================================================================
+== Vitis HLS Report for 'infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7'
+================================================================
+* Date:           Thu May 22 16:58:32 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        lstm_hls
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.256 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+--------+--------+------------------------------------------------+
+    |  Latency (cycles) |  Latency (absolute) |     Interval    |                    Pipeline                    |
+    |   min   |   max   |    min   |    max   |   min  |   max  |                      Type                      |
+    +---------+---------+----------+----------+--------+--------+------------------------------------------------+
+    |   119817|   119817|  1.198 ms|  1.198 ms|  119814|  119814|  loop auto-rewind stp (delay=0 clock cycles(s))|
+    +---------+---------+----------+----------+--------+--------+------------------------------------------------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +-------------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |                                     |  Latency (cycles) | Iteration|  Initiation Interval  |  Trip |          |
+        |              Loop Name              |   min   |   max   |  Latency |  achieved |   target  | Count | Pipelined|
+        +-------------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+        |- VITIS_LOOP_103_6_VITIS_LOOP_103_7  |   119815|   119815|        14|          6|          1|  19968|       yes|
+        +-------------------------------------+---------+---------+----------+-----------+-----------+-------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    153|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    0|       0|     51|    -|
+|Memory           |       64|    -|       0|      0|    -|
+|Multiplexer      |        -|    -|       0|    145|    -|
+|Register         |        -|    -|     285|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |       64|    0|     285|    349|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |       22|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    +------------------------+--------------------+---------+----+---+----+-----+
+    |        Instance        |       Module       | BRAM_18K| DSP| FF| LUT| URAM|
+    +------------------------+--------------------+---------+----+---+----+-----+
+    |mul_8ns_9ns_15_1_1_U33  |mul_8ns_9ns_15_1_1  |        0|   0|  0|  51|    0|
+    +------------------------+--------------------+---------+----+---+----+-----+
+    |Total                   |                    |        0|   0|  0|  51|    0|
+    +------------------------+--------------------+---------+----+---+----+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    +-------------+------------------------------------------------------------------------+---------+---+----+-----+-------+-----+------+-------------+
+    |    Memory   |                                 Module                                 | BRAM_18K| FF| LUT| URAM| Words | Bits| Banks| W*Bits*Banks|
+    +-------------+------------------------------------------------------------------------+---------+---+----+-----+-------+-----+------+-------------+
+    |Weight0_i_U  |infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7_Weight0_i_ROM_AUTO_1R  |       64|  0|   0|    0|  19968|   32|     1|       638976|
+    +-------------+------------------------------------------------------------------------+---------+---+----+-----+-------+-----+------+-------------+
+    |Total        |                                                                        |       64|  0|   0|    0|  19968|   32|     1|       638976|
+    +-------------+------------------------------------------------------------------------+---------+---+----+-----+-------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +--------------------------+----------+----+---+----+------------+------------+
+    |       Variable Name      | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +--------------------------+----------+----+---+----+------------+------------+
+    |add_ln103_1_fu_208_p2     |         +|   0|  0|  15|           8|           1|
+    |add_ln103_2_fu_202_p2     |         +|   0|  0|  20|          15|          15|
+    |add_ln103_3_fu_131_p2     |         +|   0|  0|  20|          15|           1|
+    |add_ln103_fu_143_p2       |         +|   0|  0|  15|           8|           1|
+    |first_iter_1_fu_171_p2    |      icmp|   0|  0|  15|           8|           1|
+    |icmp_ln103_1_fu_149_p2    |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln103_2_fu_213_p2    |      icmp|   0|  0|  15|           8|           8|
+    |icmp_ln103_fu_125_p2      |      icmp|   0|  0|  20|          15|          15|
+    |select_ln103_1_fu_163_p3  |    select|   0|  0|   8|           1|           8|
+    |select_ln103_fu_155_p3    |    select|   0|  0|   8|           1|           1|
+    |ap_enable_pp0             |       xor|   0|  0|   2|           1|           2|
+    +--------------------------+----------+----+---+----+------------+------------+
+    |Total                     |          |   0|  0| 153|          88|          61|
+    +--------------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------------------------------+----+-----------+-----+-----------+
+    |                  Name                  | LUT| Input Size| Bits| Total Bits|
+    +----------------------------------------+----+-----------+-----+-----------+
+    |add6931_fu_52                           |   9|          2|   32|         64|
+    |ap_NS_fsm                               |  37|          7|    1|          7|
+    |ap_done_int                             |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter0                 |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter1                 |   9|          2|    1|          2|
+    |ap_enable_reg_pp0_iter2                 |   9|          2|    1|          2|
+    |ap_loop_exit_ready_pp0_iter1_reg        |   9|          2|    1|          2|
+    |ap_sig_allocacmp_c_load                 |   9|          2|    8|         16|
+    |ap_sig_allocacmp_indvar_flatten11_load  |   9|          2|   15|         30|
+    |ap_sig_allocacmp_r_load                 |   9|          2|    8|         16|
+    |c_fu_40                                 |   9|          2|    8|         16|
+    |indvar_flatten11_fu_48                  |   9|          2|   15|         30|
+    |r_fu_44                                 |   9|          2|    8|         16|
+    +----------------------------------------+----+-----------+-----+-----------+
+    |Total                                   | 145|         31|  100|        205|
+    +----------------------------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +------------------------------------+----+----+-----+-----------+
+    |                Name                | FF | LUT| Bits| Const Bits|
+    +------------------------------------+----+----+-----+-----------+
+    |Weight0_i_load_reg_329              |  32|   0|   32|          0|
+    |add2_reg_344                        |  32|   0|   32|          0|
+    |add6931_fu_52                       |  32|   0|   32|          0|
+    |add_ln103_2_reg_300                 |  15|   0|   15|          0|
+    |ap_CS_fsm                           |   6|   0|    6|          0|
+    |ap_done_reg                         |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter0_reg         |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter1             |   1|   0|    1|          0|
+    |ap_enable_reg_pp0_iter2             |   1|   0|    1|          0|
+    |ap_loop_exit_ready_pp0_iter1_reg    |   1|   0|    1|          0|
+    |c_fu_40                             |   8|   0|    8|          0|
+    |first_iter_1_reg_290                |   1|   0|    1|          0|
+    |first_iter_1_reg_290_pp0_iter1_reg  |   1|   0|    1|          0|
+    |gate_i_addr_reg_294                 |   7|   0|    7|          0|
+    |gate_i_addr_reg_294_pp0_iter1_reg   |   7|   0|    7|          0|
+    |gate_i_load_reg_314                 |  32|   0|   32|          0|
+    |icmp_ln103_2_reg_310                |   1|   0|    1|          0|
+    |icmp_ln103_2_reg_310_pp0_iter1_reg  |   1|   0|    1|          0|
+    |icmp_ln103_reg_272                  |   1|   0|    1|          0|
+    |icmp_ln103_reg_272_pp0_iter1_reg    |   1|   0|    1|          0|
+    |indvar_flatten11_fu_48              |  15|   0|   15|          0|
+    |mul2_reg_334                        |  32|   0|   32|          0|
+    |r_fu_44                             |   8|   0|    8|          0|
+    |select_ln103_1_reg_283              |   8|   0|    8|          0|
+    |select_ln103_reg_276                |   8|   0|    8|          0|
+    |vec_i_load_reg_324                  |  32|   0|   32|          0|
+    +------------------------------------+----+----+-----+-----------+
+    |Total                               | 285|   0|  285|          0|
+    +------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------+-----+-----+------------+--------------------------------------------------+--------------+
+|      RTL Ports      | Dir | Bits|  Protocol  |                   Source Object                  |    C Type    |
++---------------------+-----+-----+------------+--------------------------------------------------+--------------+
+|ap_clk               |   in|    1|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|ap_rst               |   in|    1|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|ap_start             |   in|    1|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|ap_done              |  out|    1|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|ap_idle              |  out|    1|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|ap_ready             |  out|    1|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|grp_fu_374_p_din0    |  out|   32|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|grp_fu_374_p_din1    |  out|   32|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|grp_fu_374_p_dout0   |   in|   32|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|grp_fu_374_p_ce      |  out|    1|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|grp_fu_378_p_din0    |  out|   32|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|grp_fu_378_p_din1    |  out|   32|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|grp_fu_378_p_opcode  |  out|    2|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|grp_fu_378_p_dout0   |   in|   32|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|grp_fu_378_p_ce      |  out|    1|  ap_ctrl_hs|  infer_Pipeline_VITIS_LOOP_103_6_VITIS_LOOP_103_7|  return value|
+|vec_i_address0       |  out|    8|   ap_memory|                                             vec_i|         array|
+|vec_i_ce0            |  out|    1|   ap_memory|                                             vec_i|         array|
+|vec_i_q0             |   in|   32|   ap_memory|                                             vec_i|         array|
+|gate_i_address0      |  out|    7|   ap_memory|                                            gate_i|         array|
+|gate_i_ce0           |  out|    1|   ap_memory|                                            gate_i|         array|
+|gate_i_we0           |  out|    1|   ap_memory|                                            gate_i|         array|
+|gate_i_d0            |  out|   32|   ap_memory|                                            gate_i|         array|
+|gate_i_address1      |  out|    7|   ap_memory|                                            gate_i|         array|
+|gate_i_ce1           |  out|    1|   ap_memory|                                            gate_i|         array|
+|gate_i_q1            |   in|   32|   ap_memory|                                            gate_i|         array|
++---------------------+-----+-----+------------+--------------------------------------------------+--------------+
+

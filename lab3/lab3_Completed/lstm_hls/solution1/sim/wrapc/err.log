@@ -1,0 +1,27 @@
+apatb_LSTM_Top.cpp:33:14: warning: nested namespace definition is a C++17 extension; define each namespace separately [-Wc++17-extensions]
+namespace hls::sim
+             ^~~~~
+              { namespace sim
+apatb_LSTM_Top.cpp:80:14: warning: nested namespace definition is a C++17 extension; define each namespace separately [-Wc++17-extensions]
+namespace hls::sim
+             ^~~~~
+              { namespace sim
+2 warnings generated.
+/home/llb/college/dla/npu_dla/lab3_student/lstm_hls/main.cpp:125:20: error: no matching function for call to 'infer'
+  int net_output = infer(buf);
+                   ^~~~~
+/home/llb/college/dla/npu_dla/lab3_student/lstm_hls/rnn.h:20:6: note: candidate function not viable: requires 2 arguments, but 1 was provided
+void infer(float input[28 * 28], float res[10]);
+     ^
+/home/llb/college/dla/npu_dla/lab3_student/lstm_hls/main.cpp:125:7: error: cannot initialize a variable of type 'int' with an rvalue of type 'void'
+  int net_output = infer(buf);
+      ^            ~~~~~~~~~~
+/home/llb/college/dla/npu_dla/lab3_student/lstm_hls/main.cpp:129:2: warning: 'delete' applied to a pointer that was allocated with 'new[]'; did you mean 'delete[]'? [-Wmismatched-new-delete]
+ delete tmp;
+ ^
+       []
+/home/llb/college/dla/npu_dla/lab3_student/lstm_hls/main.cpp:114:14: note: allocated with 'new[]' here
+ byte* tmp = new byte[img_row * img_col];
+             ^
+1 warning and 2 errors generated.
+make: *** [cosim.tv.mk:87: obj/main.cpp_pre.cpp.tb.o] Error 1
