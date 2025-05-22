@@ -1,0 +1,1807 @@
+INFO-FLOW: Workspace D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1 opened at Thu May 22 20:21:22 +0800 2025
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020clg400-1 
+Execute       ap_part_info -name xc7z020clg400-1 -data single -quiet 
+Command       ap_part_info done; 0.547 sec.
+Execute       ap_part_info -name xc7z020clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 0.641 sec.
+Execute     ap_part_info -data single -name xc7z020clg400-1 
+Execute     ap_part_info -name xc7z020clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020clg400-1 -data info 
+Execute     ap_part_info -name xc7z020clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Execute     config_export -format=ip_catalog 
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 0.777 sec.
+Execute   set_part xc7z020clg400-1 
+Execute     ap_part_info -name xc7z020clg400-1 -data single -quiet 
+Execute     ap_part_info -name xc7z020clg400-1 -data info 
+Execute     add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute       get_default_platform 
+Execute       ap_part_info -data single -name xc7z020-clg400-1 
+Execute       ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       config_chip_info -quiet -speed slow 
+Execute     add_library xilinx/zynq/zynq_fpv6 
+Execute       get_default_platform 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info 
+Execute     get_default_platform 
+Execute   create_clock -period 10 -name default 
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute   config_export -format ip_catalog -rtl verilog 
+Execute   csynth_design 
+Execute     get_config_compile -dump_cfg 
+Execute     get_config_compile -effort 
+Execute     get_config_compile -enable_clang39 
+Execute     get_config_compile -g 
+Execute     get_config_compile -ng 
+Execute     get_config_compile -opt_fp 
+Execute     get_config_compile -skip_cdt 
+Execute     get_config_compile -skip_syncheck 
+Execute     get_config_compile -skip_transform 
+Execute     get_config_compile -keep_printf 
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+Execute       get_config_schedule -relax_ii_for_timing 
+INFO: [SCHED 204-61] Option 'relax_ii_for_timing' is enabled, will increase II to preserve clock frequency constraints.
+Execute       get_config_schedule -suppress_dependence_error_break 
+INFO: [HLS 200-10] Analyzing design file 'lstm_hls/rnn_top.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling lstm_hls/rnn_top.cpp as C++
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       is_encrypted lstm_hls/rnn_top.cpp 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "D:/Vivado/Vivado/2019.2/msys" -hls  -fno-exceptions  -D__llvm__  -E "lstm_hls/rnn_top.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Vivado/Vivado/2019.2/common/technology/autopilot" -I "D:/Vivado/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp" 
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/Vivado/Vivado/2019.2/msys -hls -fno-exceptions -D__llvm__ -E lstm_hls/rnn_top.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/Vivado/Vivado/2019.2/common/technology/autopilot -I D:/Vivado/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp
+Command       clang done; 0.603 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.245 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "D:/Vivado/Vivado/2019.2/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Vivado/Vivado/2019.2/common/technology/autopilot" -I "D:/Vivado/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp"  -o "D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/Vivado/Vivado/2019.2/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/Vivado/Vivado/2019.2/common/technology/autopilot -I D:/Vivado/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/useless.bc
+Command       clang done; 0.703 sec.
+INFO-FLOW: Done: GCC PP time: 1.6 seconds per iteration
+Execute       source D:/Vivado/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source D:/Vivado/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute         source D:/Vivado/Vivado/2019.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp std=gnu++98 -directive=D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.223 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp std=gnu++98 -directive=D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/all.directive.json -quiet -fix-errors D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.221 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/xilinx-dataflow-lawyer.rnn_top.pp.0.cpp.diag.yml D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/xilinx-dataflow-lawyer.rnn_top.pp.0.cpp.out.log 2> D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/xilinx-dataflow-lawyer.rnn_top.pp.0.cpp.err.log 
+Command       ap_eval done; 0.208 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp std=gnu++98 
+Execute         ap_eval exec -ignorestderr D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/tidy-3.1.rnn_top.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/tidy-3.1.rnn_top.pp.0.cpp.out.log 2> D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/tidy-3.1.rnn_top.pp.0.cpp.err.log 
+Command         ap_eval done; 0.554 sec.
+Execute         source D:/Vivado/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
+Execute           source D:/Vivado/Vivado/2019.2/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
+Execute         ap_eval exec -ignorestderr D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/xilinx-legacy-rewriter.rnn_top.pp.0.cpp.out.log 2> D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/xilinx-legacy-rewriter.rnn_top.pp.0.cpp.err.log 
+Command         ap_eval done; 0.158 sec.
+Command       tidy_31 done; 0.727 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 1.2 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.531 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Processing labels
+Execute       clang -src D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain D:/Vivado/Vivado/2019.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Vivado/Vivado/2019.2/common/technology/autopilot" -I "D:/Vivado/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.bc" 
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/Vivado/Vivado/2019.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/Vivado/Vivado/2019.2/common/technology/autopilot -I D:/Vivado/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.bc
+Command       clang done; 0.708 sec.
+INFO: [HLS 200-10] Analyzing design file 'lstm_hls/rnn.cpp' ... 
+INFO-FLOW: Compiling one TU...
+Execute       is_m_axi_addr64 
+INFO-FLOW: Handling lstm_hls/rnn.cpp as C++
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       is_encrypted lstm_hls/rnn.cpp 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Running: GCC PP
+INFO-FLOW: Source preprocessing
+Execute       clang  -fno-limit-debug-info -gcc-toolchain "D:/Vivado/Vivado/2019.2/msys" -hls  -fno-exceptions  -D__llvm__  -E "lstm_hls/rnn.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Vivado/Vivado/2019.2/common/technology/autopilot" -I "D:/Vivado/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp" 
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/Vivado/Vivado/2019.2/msys -hls -fno-exceptions -D__llvm__ -E lstm_hls/rnn.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/Vivado/Vivado/2019.2/common/technology/autopilot -I D:/Vivado/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp
+Command       clang done; 0.592 sec.
+Execute       tidy_31 xilinx-xfmat-array-geometry D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp std=gnu++98 
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.32 sec.
+INFO-FLOW: Syntax Checking before pre-processing...
+Execute       clang -syntaxcheck -src D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "D:/Vivado/Vivado/2019.2/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Vivado/Vivado/2019.2/common/technology/autopilot" -I "D:/Vivado/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp"  -o "D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/useless.bc"  
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/Vivado/Vivado/2019.2/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/Vivado/Vivado/2019.2/common/technology/autopilot -I D:/Vivado/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/useless.bc
+Command       clang done; 0.729 sec.
+INFO-FLOW: Done: GCC PP time: 1.6 seconds per iteration
+Execute       list_core -type functional_unit 
+Execute       tidy_31 xilinx-systemc-detector D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp std=gnu++98 -directive=D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/.systemc_flag 
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.322 sec.
+INFO-FLOW: Running: tidy-3.1 CDT preprocess
+Execute       tidy_31 xilinx-directive2pragma D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp std=gnu++98 -directive=D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/all.directive.json 
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/all.directive.json -quiet -fix-errors D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.319 sec.
+Execute       get_config_dataflow -strict_mode 
+Execute       ap_eval exec -ignorestderr D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/xilinx-dataflow-lawyer.rnn.pp.0.cpp.diag.yml D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/xilinx-dataflow-lawyer.rnn.pp.0.cpp.out.log 2> D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/xilinx-dataflow-lawyer.rnn.pp.0.cpp.err.log 
+Command       ap_eval done; 0.3 sec.
+Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp std=gnu++98 
+Execute         ap_eval exec -ignorestderr D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/tidy-3.1.rnn.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/tidy-3.1.rnn.pp.0.cpp.out.log 2> D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/tidy-3.1.rnn.pp.0.cpp.err.log 
+Command         ap_eval done; 0.634 sec.
+Execute         ap_eval exec -ignorestderr D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/xilinx-legacy-rewriter.rnn.pp.0.cpp.out.log 2> D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/xilinx-legacy-rewriter.rnn.pp.0.cpp.err.log 
+Command         ap_eval done; 0.215 sec.
+Command       tidy_31 done; 0.855 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 1.5 seconds per iteration
+INFO-FLOW: Pragma Handling...
+Execute       tidy_31 xilinx-ssdm-intrinsics-arguments D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pragma.1.cpp std=gnu++98 
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
+Command       tidy_31 done; 0.696 sec.
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+INFO-FLOW: Processing labels
+Execute       clang -src D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain D:/Vivado/Vivado/2019.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "D:/Vivado/Vivado/2019.2/common/technology/autopilot" -I "D:/Vivado/Vivado/2019.2/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.bc" 
+INFO-FLOW: exec D:/Vivado/Vivado/2019.2/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain D:/Vivado/Vivado/2019.2/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I D:/Vivado/Vivado/2019.2/common/technology/autopilot -I D:/Vivado/Vivado/2019.2/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.bc
+Command       clang done; 0.759 sec.
+INFO-FLOW: Linking Debug ...
+Execute       llvm-ld D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn_top.g.bc D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/rnn.g.bc -hls-opt -except-internalize LSTM_Top -LD:/Vivado/Vivado/2019.2/win64/lib -lhlsm -lhlsmc++ -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.g 
+Command       llvm-ld done; 1.344 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 198.719 ; gain = 106.082
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:00 ; elapsed = 00:00:12 . Memory (MB): peak = 198.719 ; gain = 106.082
+Execute       get_config_sdx -target 
+Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
+Execute         cleanup_all_models 
+INFO: [HLS 200-10] Starting code transformations ...
+Execute         transform -promote-dbg-pointer D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.pp.bc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.pp.0.bc -f 
+Command         transform done; 0.309 sec.
+Execute         llvm-ld D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.pp.0.bc -disable-opt -LD:/Vivado/Vivado/2019.2/win64/lib -lfloatconversion -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.g.0 
+Command         llvm-ld done; 0.926 sec.
+INFO-FLOW: Running Standard Transforms...
+Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top LSTM_Top -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.g.0.bc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
+INFO: [XFORM 203-603] Inlining function 'pop_stream<float, 1, 1, 1>' into 'mnist_lstm<float, 1, 1, 1>' (lstm_hls/rnn_top.cpp:13).
+INFO: [XFORM 203-603] Inlining function 'std::_Iter_base<float*, false>::_S_base' into 'std::__niter_base<float*>' (D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:292).
+INFO: [XFORM 203-603] Inlining function 'std::__niter_base<float*>' into 'std::fill_n<float*, int, double>' (D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798).
+INFO: [XFORM 203-603] Inlining function 'push_stream<float, 1, 1, 1>' into 'mnist_lstm<float, 1, 1, 1>' (lstm_hls/rnn_top.cpp:26).
+Command         transform done; 0.852 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:00:01 ; elapsed = 00:00:14 . Memory (MB): peak = 292.734 ; gain = 200.098
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO-FLOW: Checking Synthesizability 1/2..
+Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.g.1.bc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.g.2.prechk.bc -f 
+INFO: [XFORM 203-602] Inlining function 'std::__fill_n_a<float*, int, double>' into 'std::fill_n<float*, int, double>.1' (D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::data' into 'fp_struct<float>::to_float' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_float' into 'fp_struct<float>::to_ieee' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'generic_copysign<float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_copysign<float>' into 'generic_fabs<float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_fabs.h:13) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'generic_nan<float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_nan.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:512) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:526) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isnan<double>' into 'exp_reduce_::exp_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:209) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isinf<double>' into 'exp_reduce_::exp_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:210) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'exp_reduce_::exp_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:219) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'exp_reduce_::exp_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:237) automatically.
+INFO: [XFORM 203-602] Inlining function 'exp_reduce_::exp_traits<double>::exp_Z1P_m_1' into 'exp_reduce_::exp_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:322) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_fabs<float>' into 'explog_based::generic_tanh<float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:62) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_nan<float>' into 'explog_based::generic_tanh<float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:68) automatically.
+INFO: [XFORM 203-602] Inlining function 'exp_reduce_::expm1' into 'explog_based::generic_tanh<float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:90) automatically.
+INFO: [XFORM 203-602] Inlining function 'tanhf' into 'std::tanh' (D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\cmath:466) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::tanh' into 'tanh' (lstm_hls/rnn.cpp:34) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::__fill_n_a<float*, int, double>.1' into 'std::fill_n<float*, int, double>' (D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798) automatically.
+INFO: [XFORM 203-602] Inlining function 'tanh' into 'infer' (lstm_hls/rnn.cpp:129) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::fill_n<float*, int, double>' into 'infer' (lstm_hls/rnn.cpp:157) automatically.
+INFO: [XFORM 203-602] Inlining function 'geva' into 'infer' (lstm_hls/rnn.cpp:158) automatically.
+Command         transform done; 0.444 sec.
+INFO-FLOW: Checking Synthesizability 2/2..
+Execute         transform -syn-check D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.g.2.prechk.bc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
+Command         transform done; 0.217 sec.
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:00:01 ; elapsed = 00:00:15 . Memory (MB): peak = 358.586 ; gain = 265.949
+INFO-FLOW: Compiler optimizing ...
+INFO-FLOW: Share syncheck's 1.bc for syn flow: copy D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.g.1.bc to D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.o.1.bc
+INFO-FLOW: Presyn 1...
+Execute         transform -hls -tmp D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db -interface-port-rename -type-info -function-uniquify -directive-preproc -mem2reg -dse -dce -disaggr -scalarrepl -norm-name -deadargelim -mem2reg -instcombine -dce -simplifycfg -auto-rom-infer -dce -function-uniquify -resource-proc -clib-intrinsic-prepare -dce -func-buffer -dce -pag -array-normalize -func-legal -instcombine -gvn -constprop -dce -simplifycfg -mem2reg -globaldce -resolve-double-ptr -dce -deadargelim -dce -instcombine -ptrArgReplace -mem2reg -dce -array-seg-normalize -deadargelim -instcombine -dce -pointer-simplify -dce -port-alignment -dce -interface-preproc -data-pack -instcombine -dce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -loop-simplify -indvars -instcombine -gvn -loop-simplify -mem2reg -dce -find-region -instcombine -auto-loop-pipeline -inst-simplify -interface-preproc -cfgopt -instcombine -indvars -auto-loop-unroll -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -clean-region -attach-range -gvn -inst-simplify -constprop -simplifycfg -dce -pointer-simplify -dce -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -auto-par -instcombine -dce -array-transform-check -array-reshape -instcombine -simplifycfg -dce -ptrArgReplace -deadargelim -mem2reg -instcombine -simplifycfg -dce -indvars -loop-simplify -loop-bound -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -duplicate-dataflow-processes -globaldce -instcombine -array-partition -instcombine -simplifycfg -dce -ptrArgReplace -global-constprop -deadargelim -mem2reg -func-legal -dce -global-constprop -deadargelim -mem2reg -simplifycfg -dce -merge-param -deadargelim -globalopt -constprop -dce -array-promote -constprop -dce -ptrArgReplace -mem2reg -simplifycfg -dce -mem-intrinsic-preproc -dce -global-internalize -global-privatize -mem2reg -globaldce -promote-global-argument -ptrArgReplace -mem2reg -dce -globalopt -mergereturn -simplify-global-access -mem2reg -dce -pointer-simplify -dce -functionattrs -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -dce -norm-name -function-inline -complex-op-raise -inst-simplify -globaldce -func-inst -constprop -instcombine -simplifycfg -dce -func-legal -dce -loop-bound -arraycheck -bitwidthmin -on-by-dataflow -loop-delete -instcombine -simplifycfg -globaldce -dce -gvn -deadargelim -dce -loop-simplify -clean-region -simplifycfg -propagate-stable-arguments -loop-stream -instcombine -simplifycfg -dce -globaldce -duplicate-dataflow-processes -stream-intrinsic-preproc -dce -check-ap-stream -loop-simplify -eliminate-keepreads -extract-dataflow-in-loop -loop-simplify -dce -gvn -deadargelim -dse -check-dataflow-syntax -legalize-stream-variable -legalize-global -extract-subproc -dce -dead-channel-elimination -canonicalize-gep -globaldce -dce -gvn -deadargelim -annotate-dataflow-channels -scalar-propagation -deadargelim -globaldce -mem2reg -check-dataflow-channels -function-stream -dce -globaldce -prop-fifo-spec -internal-stream-gen -canonicalize-gep -globaldce -dce -gvn -deadargelim -mergereturn -indvars -loop-simplify -instcombine -array-stream -array-seg-normalize -array-partition -func-legal -instcombine -simplifycfg -dce -bundle-memfifo-ops -deadargelim -function-uniquify -directive-preproc -mem2reg -dse -dce -group-axi-access -licm -simplifycfg -dce -loop-delete -norm-name D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.o.1.bc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.o.1.tmp.bc -f 
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'out.data.V' (lstm_hls/rnn_top.cpp:33).
+WARNING: [XFORM 203-1103] Ignored data pack directive on non-struct variable 'in.data.V' (lstm_hls/rnn_top.cpp:33).
+INFO: [XFORM 203-602] Inlining function 'std::__fill_n_a<float*, int, double>' into 'std::fill_n<float*, int, double>.1' (D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::data' into 'fp_struct<float>::to_float' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:348) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_float' into 'fp_struct<float>::to_ieee' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:369) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'generic_copysign<float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_copysign.h:14) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_copysign<float>' into 'generic_fabs<float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_fabs.h:13) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<float>::to_ieee' into 'generic_nan<float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint/hls_nan.h:15) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::data' into 'fp_struct<double>::to_double' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:512) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_double' into 'fp_struct<double>::to_ieee' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/src/hls\utils/x_hls_utils.h:526) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isnan<double>' into 'exp_reduce_::exp_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:209) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_isinf<double>' into 'exp_reduce_::exp_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:210) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::to_ieee' into 'exp_reduce_::exp_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:219) automatically.
+INFO: [XFORM 203-602] Inlining function 'fp_struct<double>::expv' into 'exp_reduce_::exp_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:237) automatically.
+INFO: [XFORM 203-602] Inlining function 'exp_reduce_::exp_traits<double>::exp_Z1P_m_1' into 'exp_reduce_::exp_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:322) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_fabs<float>' into 'explog_based::generic_tanh<float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:62) automatically.
+INFO: [XFORM 203-602] Inlining function 'generic_nan<float>' into 'explog_based::generic_tanh<float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:68) automatically.
+INFO: [XFORM 203-602] Inlining function 'exp_reduce_::expm1' into 'explog_based::generic_tanh<float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:90) automatically.
+INFO: [XFORM 203-602] Inlining function 'tanhf' into 'std::tanh' (D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\cmath:466) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::tanh' into 'tanh' (lstm_hls/rnn.cpp:34) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::__fill_n_a<float*, int, double>.1' into 'std::fill_n<float*, int, double>' (D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798) automatically.
+INFO: [XFORM 203-602] Inlining function 'tanh' into 'infer' (lstm_hls/rnn.cpp:129) automatically.
+INFO: [XFORM 203-602] Inlining function 'std::fill_n<float*, int, double>' into 'infer' (lstm_hls/rnn.cpp:157) automatically.
+INFO: [XFORM 203-602] Inlining function 'geva' into 'infer' (lstm_hls/rnn.cpp:158) automatically.
+Command         transform done; 0.872 sec.
+INFO-FLOW: Presyn 2...
+Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.o.1.tmp.bc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:108:8) to (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:114:3) in function 'explog_based::generic_tanh<float>'... converting 3 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:83:10) to (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/src/common/hls_exp_float.cpp:9:10) in function 'explog_based::generic_tanh<float>'... converting 4 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:185:19) to (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:368:3) in function 'exp_reduce_::exp_generic<double>'... converting 12 basic blocks.
+Command         transform done; 0.426 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:16 . Memory (MB): peak = 458.641 ; gain = 366.004
+INFO-FLOW: Building ssdm...
+Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -ptrLegalization -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.o.2.bc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
+WARNING: [XFORM 203-631] Renaming function 'std::fill_n<float*, int, double>.1' to 'fill_n' (D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762:23)
+WARNING: [XFORM 203-631] Renaming function 'mnist_lstm<float, 1, 1, 1>' to 'mnist_lstm' (lstm_hls/rnn_top.cpp:5:26)
+WARNING: [XFORM 203-631] Renaming function 'explog_based::generic_tanh<float>' to 'generic_tanh<float>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_tanh.h:57)
+WARNING: [XFORM 203-631] Renaming function 'exp_reduce_::exp_generic<double>' to 'exp_generic<double>' (r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:185)
+INFO: [HLS 200-472] Inferring partial write operation for 'res' (lstm_hls/rnn.cpp:23:25)
+INFO: [HLS 200-472] Inferring partial write operation for 'img_dat' (lstm_hls/rnn_top.cpp:14:3)
+INFO: [HLS 200-472] Inferring partial write operation for 'gate_f' (lstm_hls/rnn.cpp:67:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'gate_i' (lstm_hls/rnn.cpp:68:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'stat_C' (lstm_hls/rnn.cpp:69:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'C_t' (lstm_hls/rnn.cpp:70:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'gate_o' (lstm_hls/rnn.cpp:71:27)
+INFO: [HLS 200-472] Inferring partial write operation for 'h_t' (lstm_hls/rnn.cpp:72:24)
+INFO: [HLS 200-472] Inferring partial write operation for 'vec_i' (lstm_hls/rnn.cpp:106:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'vec_i' (lstm_hls/rnn.cpp:108:4)
+INFO: [HLS 200-472] Inferring partial write operation for 'vec_tmp' (lstm_hls/rnn.cpp:113:102)
+INFO: [HLS 200-472] Inferring partial write operation for 'vec_tmp' (lstm_hls/rnn.cpp:120:102)
+INFO: [HLS 200-472] Inferring partial write operation for 'vec_tmp' (lstm_hls/rnn.cpp:127:102)
+INFO: [HLS 200-472] Inferring partial write operation for 'stat_C' (lstm_hls/rnn.cpp:34:12)
+INFO: [HLS 200-472] Inferring partial write operation for 'vec_tmp' (lstm_hls/rnn.cpp:134:102)
+INFO: [HLS 200-472] Inferring partial write operation for 'vec_tmp' (lstm_hls/rnn.cpp:34:12)
+INFO: [HLS 200-472] Inferring partial write operation for 'res' (D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:763:2)
+INFO: [HLS 200-472] Inferring partial write operation for 'res' (lstm_hls/rnn.cpp:157:90)
+INFO: [HLS 200-472] Inferring partial write operation for 'res' (lstm_hls/rnn.cpp:45:3)
+INFO: [HLS 200-472] Inferring partial write operation for 'res' (lstm_hls/rnn.cpp:56:3)
+INFO: [HLS 200-472] Inferring partial write operation for 'res' (lstm_hls/rnn.cpp:45:3)
+INFO: [HLS 200-472] Inferring partial write operation for '__first' (D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:763:2)
+Command         transform done; 0.881 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:00:02 ; elapsed = 00:00:17 . Memory (MB): peak = 550.547 ; gain = 457.910
+INFO-FLOW: Finish building internal data model.
+Command       opt_and_import_c done; 4.944 sec.
+Command     elaborate done; 15.627 sec.
+Execute     autosyn -from_csynth_design=1 
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO-FLOW: Synthesizing C/C++ design ...
+INFO: [HLS 200-10] Synthesizing 'LSTM_Top' ...
+Execute       ap_set_top_model LSTM_Top 
+WARNING: [SYN 201-103] Legalizing function name 'geva.1' to 'geva_1'.
+WARNING: [SYN 201-103] Legalizing function name 'exp_generic<double>' to 'exp_generic_double_s'.
+WARNING: [SYN 201-103] Legalizing function name 'generic_tanh<float>' to 'generic_tanh_float_s'.
+Execute       get_model_list LSTM_Top -filter all-wo-channel -topdown 
+Execute       preproc_iomode -model LSTM_Top 
+Execute       preproc_iomode -model mnist_lstm 
+Execute       preproc_iomode -model infer 
+Execute       preproc_iomode -model hprod 
+Execute       preproc_iomode -model generic_tanh<float> 
+Execute       preproc_iomode -model exp_generic<double> 
+Execute       preproc_iomode -model sigmoid 
+Execute       preproc_iomode -model geva.1 
+Execute       preproc_iomode -model fill_n 
+Execute       get_model_list LSTM_Top -filter all-wo-channel 
+INFO-FLOW: Model list for configure: fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top
+INFO-FLOW: Configuring Module : fill_n ...
+Execute       set_default_model fill_n 
+Execute       apply_spec_resource_limit fill_n 
+INFO-FLOW: Configuring Module : geva.1 ...
+Execute       set_default_model geva.1 
+Execute       apply_spec_resource_limit geva.1 
+INFO-FLOW: Configuring Module : sigmoid ...
+Execute       set_default_model sigmoid 
+Execute       apply_spec_resource_limit sigmoid 
+INFO-FLOW: Configuring Module : exp_generic<double> ...
+Execute       set_default_model exp_generic<double> 
+Execute       apply_spec_resource_limit exp_generic<double> 
+INFO-FLOW: Configuring Module : generic_tanh<float> ...
+Execute       set_default_model generic_tanh<float> 
+Execute       apply_spec_resource_limit generic_tanh<float> 
+INFO-FLOW: Configuring Module : hprod ...
+Execute       set_default_model hprod 
+Execute       apply_spec_resource_limit hprod 
+INFO-FLOW: Configuring Module : infer ...
+Execute       set_default_model infer 
+Execute       apply_spec_resource_limit infer 
+INFO-FLOW: Configuring Module : mnist_lstm ...
+Execute       set_default_model mnist_lstm 
+Execute       apply_spec_resource_limit mnist_lstm 
+INFO-FLOW: Configuring Module : LSTM_Top ...
+Execute       set_default_model LSTM_Top 
+Execute       apply_spec_resource_limit LSTM_Top 
+INFO-FLOW: Model list for preprocess: fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top
+INFO-FLOW: Preprocessing Module: fill_n ...
+Execute       set_default_model fill_n 
+Execute       cdfg_preprocess -model fill_n 
+Execute       rtl_gen_preprocess fill_n 
+INFO-FLOW: Preprocessing Module: geva.1 ...
+Execute       set_default_model geva.1 
+Execute       cdfg_preprocess -model geva.1 
+Execute       rtl_gen_preprocess geva.1 
+INFO-FLOW: Preprocessing Module: sigmoid ...
+Execute       set_default_model sigmoid 
+Execute       cdfg_preprocess -model sigmoid 
+Execute       rtl_gen_preprocess sigmoid 
+INFO-FLOW: Preprocessing Module: exp_generic<double> ...
+Execute       set_default_model exp_generic<double> 
+Execute       cdfg_preprocess -model exp_generic<double> 
+Execute       rtl_gen_preprocess exp_generic<double> 
+INFO-FLOW: Preprocessing Module: generic_tanh<float> ...
+Execute       set_default_model generic_tanh<float> 
+Execute       cdfg_preprocess -model generic_tanh<float> 
+Execute       rtl_gen_preprocess generic_tanh<float> 
+INFO-FLOW: Preprocessing Module: hprod ...
+Execute       set_default_model hprod 
+Execute       cdfg_preprocess -model hprod 
+Execute       rtl_gen_preprocess hprod 
+INFO-FLOW: Preprocessing Module: infer ...
+Execute       set_default_model infer 
+Execute       cdfg_preprocess -model infer 
+Execute       rtl_gen_preprocess infer 
+INFO-FLOW: Preprocessing Module: mnist_lstm ...
+Execute       set_default_model mnist_lstm 
+Execute       cdfg_preprocess -model mnist_lstm 
+Execute       rtl_gen_preprocess mnist_lstm 
+INFO-FLOW: Preprocessing Module: LSTM_Top ...
+Execute       set_default_model LSTM_Top 
+Execute       cdfg_preprocess -model LSTM_Top 
+Execute       rtl_gen_preprocess LSTM_Top 
+INFO-FLOW: Model list for synthesis: fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'fill_n' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model fill_n 
+Execute       schedule -model fill_n 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 16.818 seconds; current allocated memory: 481.543 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.verbose.sched.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.sched.adb -f 
+INFO-FLOW: Finish scheduling fill_n.
+Execute       set_default_model fill_n 
+Execute       bind -model fill_n 
+BIND OPTION: model=fill_n
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.066 seconds; current allocated memory: 481.606 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.verbose.bind.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.bind.adb -f 
+INFO-FLOW: Finish binding fill_n.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'geva_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model geva.1 
+Execute       schedule -model geva.1 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.069 seconds; current allocated memory: 481.738 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.verbose.sched.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.sched.adb -f 
+INFO-FLOW: Finish scheduling geva.1.
+Execute       set_default_model geva.1 
+Execute       bind -model geva.1 
+BIND OPTION: model=geva.1
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.067 seconds; current allocated memory: 481.821 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.verbose.bind.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.bind.adb -f 
+INFO-FLOW: Finish binding geva.1.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'sigmoid' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model sigmoid 
+Execute       schedule -model sigmoid 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.075 seconds; current allocated memory: 481.981 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.verbose.sched.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.sched.adb -f 
+INFO-FLOW: Finish scheduling sigmoid.
+Execute       set_default_model sigmoid 
+Execute       bind -model sigmoid 
+BIND OPTION: model=sigmoid
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.11 seconds; current allocated memory: 482.154 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.verbose.bind.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.bind.adb -f 
+INFO-FLOW: Finish binding sigmoid.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'exp_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model exp_generic<double> 
+Execute       schedule -model exp_generic<double> 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'exp_generic<double>'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 20.
+WARNING: [SCHED 204-21] Estimated clock period (9.514ns) exceeds the target (target clock period: 10ns, clock uncertainty: 1.25ns, effective delay budget: 8.75ns).
+WARNING: [SCHED 204-21] The critical path in module 'exp_generic_double_s' consists of the following:
+	'mul' operation of DSP[53] ('r.V', r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:272) [50]  (3.36 ns)
+	'add' operation of DSP[53] ('ret.V', r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:272) [53]  (3.02 ns)
+	'icmp' operation ('icmp_ln805', r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:272) [57]  (2.43 ns)
+	'select' operation ('select_ln805', r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:272) [59]  (0 ns)
+	'select' operation ('r_exp.V', r:/builds/2019.2/continuous/2019_11_06_2708876/src/products/hls/hls_lib/hlsmath/include/FloatingPoint\hls_exp_.h:272) [60]  (0.7 ns)
+INFO: [SCHED 204-11] Finished scheduling.
+Command       schedule done; 0.11 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.229 seconds; current allocated memory: 482.882 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.verbose.sched.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.sched.adb -f 
+INFO-FLOW: Finish scheduling exp_generic<double>.
+Execute       set_default_model exp_generic<double> 
+Execute       bind -model exp_generic<double> 
+BIND OPTION: model=exp_generic<double>
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.127 seconds; current allocated memory: 483.457 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.verbose.bind.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.bind.adb -f 
+INFO-FLOW: Finish binding exp_generic<double>.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'generic_tanh_float_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model generic_tanh<float> 
+Execute       schedule -model generic_tanh<float> 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.161 seconds; current allocated memory: 483.913 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.verbose.sched.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.sched.adb -f 
+INFO-FLOW: Finish scheduling generic_tanh<float>.
+Execute       set_default_model generic_tanh<float> 
+Execute       bind -model generic_tanh<float> 
+BIND OPTION: model=generic_tanh<float>
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.131 seconds; current allocated memory: 484.346 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.verbose.bind.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.bind.adb -f 
+INFO-FLOW: Finish binding generic_tanh<float>.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'hprod' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model hprod 
+Execute       schedule -model hprod 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.165 seconds; current allocated memory: 484.532 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.verbose.sched.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.sched.adb -f 
+INFO-FLOW: Finish scheduling hprod.
+Execute       set_default_model hprod 
+Execute       bind -model hprod 
+BIND OPTION: model=hprod
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.062 seconds; current allocated memory: 484.619 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.verbose.bind.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.bind.adb -f 
+INFO-FLOW: Finish binding hprod.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'infer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model infer 
+Execute       schedule -model infer 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.157 seconds; current allocated memory: 485.529 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.verbose.sched.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.sched.adb -f 
+INFO-FLOW: Finish scheduling infer.
+Execute       set_default_model infer 
+Execute       bind -model infer 
+BIND OPTION: model=infer
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+Command       bind done; 0.139 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.287 seconds; current allocated memory: 486.794 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.verbose.bind.rpt 
+Command       syn_report done; 0.143 sec.
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.bind.adb -f 
+INFO-FLOW: Finish binding infer.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'mnist_lstm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model mnist_lstm 
+Execute       schedule -model mnist_lstm 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'Loop 1'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 17.
+INFO: [SCHED 204-61] Pipelining loop 'Loop 2'.
+INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.271 seconds; current allocated memory: 487.173 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.verbose.sched.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.sched.adb -f 
+INFO-FLOW: Finish scheduling mnist_lstm.
+Execute       set_default_model mnist_lstm 
+Execute       bind -model mnist_lstm 
+BIND OPTION: model=mnist_lstm
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.13 seconds; current allocated memory: 487.435 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.verbose.bind.rpt 
+Command       syn_report done; 0.119 sec.
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.bind.adb -f 
+INFO-FLOW: Finish binding mnist_lstm.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'LSTM_Top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       set_default_model LSTM_Top 
+Execute       schedule -model LSTM_Top 
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111]  Elapsed time: 0.18 seconds; current allocated memory: 487.706 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.verbose.sched.rpt 
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.sched.adb -f 
+INFO-FLOW: Finish scheduling LSTM_Top.
+Execute       set_default_model LSTM_Top 
+Execute       bind -model LSTM_Top 
+BIND OPTION: model=LSTM_Top
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111]  Elapsed time: 0.109 seconds; current allocated memory: 487.861 MB.
+Execute       syn_report -verbosereport -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.verbose.bind.rpt 
+Command       syn_report done; 0.109 sec.
+Execute       db_write -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.bind.adb -f 
+INFO-FLOW: Finish binding LSTM_Top.
+Execute       get_model_list LSTM_Top -filter all-wo-channel 
+INFO-FLOW: Preprocessing for RTLGen ...
+Execute       rtl_gen_preprocess fill_n 
+Execute       rtl_gen_preprocess geva.1 
+Execute       rtl_gen_preprocess sigmoid 
+Execute       rtl_gen_preprocess exp_generic<double> 
+Execute       rtl_gen_preprocess generic_tanh<float> 
+Execute       rtl_gen_preprocess hprod 
+Execute       rtl_gen_preprocess infer 
+Execute       rtl_gen_preprocess mnist_lstm 
+Execute       rtl_gen_preprocess LSTM_Top 
+INFO-FLOW: Model list for RTL generation: fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'fill_n' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model fill_n -vendor xilinx -mg_file D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.compgen.tcl 
+INFO: [RTGEN 206-100] Finished creating RTL model for 'fill_n'.
+INFO: [HLS 200-111]  Elapsed time: 0.173 seconds; current allocated memory: 488.158 MB.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl fill_n -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/systemc/fill_n -synmodules fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top 
+Execute       gen_rtl fill_n -style xilinx -f -lang vhdl -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/vhdl/fill_n 
+Execute       gen_rtl fill_n -style xilinx -f -lang vlog -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/verilog/fill_n 
+Execute       syn_report -csynth -model fill_n -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/fill_n_csynth.rpt 
+Execute       syn_report -rtlxml -model fill_n -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/fill_n_csynth.xml 
+Execute       syn_report -verbosereport -model fill_n -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.verbose.rpt 
+Execute       db_write -model fill_n -f -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.adb 
+Execute       gen_tb_info fill_n -p D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'geva_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model geva.1 -vendor xilinx -mg_file D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_fadd_32ns_32ns_32_5_full_dsp_1' to 'LSTM_Top_fadd_32nbkb' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_fadd_32nbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'geva_1'.
+INFO: [HLS 200-111]  Elapsed time: 0.085 seconds; current allocated memory: 488.449 MB.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl geva.1 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/systemc/geva_1 -synmodules fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top 
+Execute       gen_rtl geva.1 -style xilinx -f -lang vhdl -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/vhdl/geva_1 
+Execute       gen_rtl geva.1 -style xilinx -f -lang vlog -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/verilog/geva_1 
+Execute       syn_report -csynth -model geva.1 -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/geva_1_csynth.rpt 
+Execute       syn_report -rtlxml -model geva.1 -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/geva_1_csynth.xml 
+Execute       syn_report -verbosereport -model geva.1 -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.verbose.rpt 
+Execute       db_write -model geva.1 -f -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.adb 
+Execute       gen_tb_info geva.1 -p D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'sigmoid' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model sigmoid -vendor xilinx -mg_file D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_fptrunc_64ns_32_2_1' to 'LSTM_Top_fptrunc_cud' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_fpext_32ns_64_2_1' to 'LSTM_Top_fpext_32dEe' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_dadd_64ns_64ns_64_5_full_dsp_1' to 'LSTM_Top_dadd_64neOg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_ddiv_64ns_64ns_64_31_1' to 'LSTM_Top_ddiv_64nfYi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_dexp_64ns_64ns_64_18_full_dsp_1' to 'LSTM_Top_dexp_64ng8j' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_dadd_64neOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_ddiv_64nfYi': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_dexp_64ng8j': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_fpext_32dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_fptrunc_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'sigmoid'.
+INFO: [HLS 200-111]  Elapsed time: 0.123 seconds; current allocated memory: 489.122 MB.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl sigmoid -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/systemc/sigmoid -synmodules fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top 
+Execute       gen_rtl sigmoid -style xilinx -f -lang vhdl -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/vhdl/sigmoid 
+Execute       gen_rtl sigmoid -style xilinx -f -lang vlog -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/verilog/sigmoid 
+Execute       syn_report -csynth -model sigmoid -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/sigmoid_csynth.rpt 
+Execute       syn_report -rtlxml -model sigmoid -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/sigmoid_csynth.xml 
+Execute       syn_report -verbosereport -model sigmoid -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.verbose.rpt 
+Execute       db_write -model sigmoid -f -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.adb 
+Execute       gen_tb_info sigmoid -p D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'exp_generic_double_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model exp_generic<double> -vendor xilinx -mg_file D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'exp_generic_double_s_table_exp_Z1_array_s' to 'exp_generic_doublhbi' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'exp_generic_double_s_table_f_Z3_array_V' to 'exp_generic_doublibs' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'exp_generic_double_s_table_f_Z2_array_V' to 'exp_generic_doubljbC' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_mul_72ns_13s_84_5_1' to 'LSTM_Top_mul_72nskbM' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_mul_36ns_43ns_79_2_1' to 'LSTM_Top_mul_36nslbW' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_mul_44ns_49ns_93_2_1' to 'LSTM_Top_mul_44nsmb6' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_mul_50ns_50ns_100_2_1' to 'LSTM_Top_mul_50nsncg' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_mac_muladd_16ns_16s_19s_31_1_1' to 'LSTM_Top_mac_mulaocq' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_mac_mulaocq': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_mul_36nslbW': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_mul_44nsmb6': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_mul_50nsncg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_mul_72nskbM': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'exp_generic_double_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.234 seconds; current allocated memory: 490.607 MB.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl exp_generic<double> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/systemc/exp_generic_double_s -synmodules fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top 
+Execute       gen_rtl exp_generic<double> -style xilinx -f -lang vhdl -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/vhdl/exp_generic_double_s 
+Execute       gen_rtl exp_generic<double> -style xilinx -f -lang vlog -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/verilog/exp_generic_double_s 
+Execute       syn_report -csynth -model exp_generic<double> -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/exp_generic_double_s_csynth.rpt 
+Execute       syn_report -rtlxml -model exp_generic<double> -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/exp_generic_double_s_csynth.xml 
+Execute       syn_report -verbosereport -model exp_generic<double> -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.verbose.rpt 
+Execute       db_write -model exp_generic<double> -f -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.adb 
+Execute       gen_tb_info exp_generic<double> -p D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'generic_tanh_float_s' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model generic_tanh<float> -vendor xilinx -mg_file D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.compgen.tcl 
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_faddfsub_32ns_32ns_32_5_full_dsp_1' to 'LSTM_Top_faddfsubpcA' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_fmul_32ns_32ns_32_4_max_dsp_1' to 'LSTM_Top_fmul_32nqcK' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_fdiv_32ns_32ns_32_16_1' to 'LSTM_Top_fdiv_32nrcU' due to the length limit 20
+INFO: [SYN 201-210] Renamed object name 'LSTM_Top_fcmp_32ns_32ns_1_2_1' to 'LSTM_Top_fcmp_32nsc4' due to the length limit 20
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_dadd_64neOg': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_faddfsubpcA': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_fcmp_32nsc4': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_fdiv_32nrcU': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_fmul_32nqcK': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_fpext_32dEe': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_fptrunc_cud': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'generic_tanh_float_s'.
+INFO: [HLS 200-111]  Elapsed time: 0.305 seconds; current allocated memory: 492.005 MB.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl generic_tanh<float> -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/systemc/generic_tanh_float_s -synmodules fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top 
+Execute       gen_rtl generic_tanh<float> -style xilinx -f -lang vhdl -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/vhdl/generic_tanh_float_s 
+Execute       gen_rtl generic_tanh<float> -style xilinx -f -lang vlog -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/verilog/generic_tanh_float_s 
+Execute       syn_report -csynth -model generic_tanh<float> -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/generic_tanh_float_s_csynth.rpt 
+Execute       syn_report -rtlxml -model generic_tanh<float> -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/generic_tanh_float_s_csynth.xml 
+Execute       syn_report -verbosereport -model generic_tanh<float> -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.verbose.rpt 
+Execute       db_write -model generic_tanh<float> -f -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.adb 
+Execute       gen_tb_info generic_tanh<float> -p D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'hprod' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model hprod -vendor xilinx -mg_file D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_fmul_32nqcK': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'hprod'.
+INFO: [HLS 200-111]  Elapsed time: 0.22 seconds; current allocated memory: 492.358 MB.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl hprod -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/systemc/hprod -synmodules fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top 
+Execute       gen_rtl hprod -style xilinx -f -lang vhdl -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/vhdl/hprod 
+Execute       gen_rtl hprod -style xilinx -f -lang vlog -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/verilog/hprod 
+Execute       syn_report -csynth -model hprod -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/hprod_csynth.rpt 
+Execute       syn_report -rtlxml -model hprod -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/hprod_csynth.xml 
+Execute       syn_report -verbosereport -model hprod -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.verbose.rpt 
+Execute       db_write -model hprod -f -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.adb 
+Execute       gen_tb_info hprod -p D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'infer' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model infer -vendor xilinx -mg_file D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_fadd_32nbkb': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_fmul_32nqcK': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'infer'.
+Command       create_rtl_model done; 0.106 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.21 seconds; current allocated memory: 494.883 MB.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl infer -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/systemc/infer -synmodules fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top 
+Execute       gen_rtl infer -style xilinx -f -lang vhdl -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/vhdl/infer 
+Execute       gen_rtl infer -style xilinx -f -lang vlog -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/verilog/infer 
+Execute       syn_report -csynth -model infer -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/infer_csynth.rpt 
+Execute       syn_report -rtlxml -model infer -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/infer_csynth.xml 
+Execute       syn_report -verbosereport -model infer -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.verbose.rpt 
+Command       syn_report done; 0.182 sec.
+Execute       db_write -model infer -f -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.adb 
+Execute       gen_tb_info infer -p D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'mnist_lstm' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model mnist_lstm -vendor xilinx -mg_file D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.compgen.tcl 
+INFO: [RTGEN 206-100] Generating core module 'LSTM_Top_fdiv_32nrcU': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'mnist_lstm'.
+INFO: [HLS 200-111]  Elapsed time: 0.572 seconds; current allocated memory: 496.074 MB.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl mnist_lstm -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/systemc/mnist_lstm -synmodules fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top 
+Execute       gen_rtl mnist_lstm -style xilinx -f -lang vhdl -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/vhdl/mnist_lstm 
+Execute       gen_rtl mnist_lstm -style xilinx -f -lang vlog -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/verilog/mnist_lstm 
+Execute       syn_report -csynth -model mnist_lstm -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/mnist_lstm_csynth.rpt 
+Execute       syn_report -rtlxml -model mnist_lstm -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/mnist_lstm_csynth.xml 
+Execute       syn_report -verbosereport -model mnist_lstm -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.verbose.rpt 
+Command       syn_report done; 0.123 sec.
+Execute       db_write -model mnist_lstm -f -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.adb 
+Execute       gen_tb_info mnist_lstm -p D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'LSTM_Top' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+Execute       get_config_rtl -module_prefix 
+Execute       get_config_rtl -module_auto_prefix 
+Execute       create_rtl_model LSTM_Top -vendor xilinx -mg_file D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.compgen.tcl 
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/in_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/in_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/in_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/in_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/in_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/in_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/in_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/out_data_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/out_keep_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/out_strb_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/out_user_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/out_last_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/out_id_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on port 'LSTM_Top/out_dest_V' to 'axis' (register, both mode).
+INFO: [RTGEN 206-500] Setting interface mode on function 'LSTM_Top' to 'ap_ctrl_none'.
+WARNING: [RTGEN 206-101] Global array 'Bias0_f' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'Bias0_i' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'Bias0_c' will not be exposed as RTL port.
+WARNING: [RTGEN 206-101] Global array 'Bias0_o' will not be exposed as RTL port.
+INFO: [RTGEN 206-100] Finished creating RTL model for 'LSTM_Top'.
+INFO: [HLS 200-111]  Elapsed time: 0.314 seconds; current allocated memory: 496.776 MB.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute       gen_rtl LSTM_Top -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/systemc/LSTM_Top -synmodules fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top 
+Execute       gen_rtl LSTM_Top -istop -style xilinx -f -lang vhdl -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/vhdl/LSTM_Top 
+Execute       gen_rtl LSTM_Top -istop -style xilinx -f -lang vlog -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/verilog/LSTM_Top 
+Execute       syn_report -csynth -model LSTM_Top -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/LSTM_Top_csynth.rpt 
+Execute       syn_report -rtlxml -model LSTM_Top -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/syn/report/LSTM_Top_csynth.xml 
+Execute       syn_report -verbosereport -model LSTM_Top -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.verbose.rpt 
+Command       syn_report done; 0.108 sec.
+Execute       db_write -model LSTM_Top -f -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.adb 
+Execute       gen_tb_info LSTM_Top -p D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top 
+Execute       export_constraint_db -f -tool general -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.constraint.tcl 
+Execute       syn_report -designview -model LSTM_Top -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.design.xml 
+Execute       get_config_rtl -disable_wave_debug 
+Execute       syn_report -wcfg -model LSTM_Top -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top_dataflow_ana.wcfg 
+Execute       syn_report -protoinst -model LSTM_Top -o D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.protoinst 
+Execute       get_config_debug -directory 
+Execute       sc_get_clocks LSTM_Top 
+Execute       get_config_export -vivado_clock 
+Execute       sc_get_portdomain LSTM_Top 
+INFO-FLOW: Model list for RTL component generation: fill_n geva.1 sigmoid exp_generic<double> generic_tanh<float> hprod infer mnist_lstm LSTM_Top
+INFO-FLOW: Handling components in module [fill_n] ... 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.compgen.tcl 
+INFO-FLOW: Handling components in module [geva_1] ... 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.compgen.tcl 
+INFO-FLOW: Found component LSTM_Top_fadd_32nbkb.
+INFO-FLOW: Append model LSTM_Top_fadd_32nbkb
+INFO-FLOW: Handling components in module [sigmoid] ... 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.compgen.tcl 
+INFO-FLOW: Found component LSTM_Top_fptrunc_cud.
+INFO-FLOW: Append model LSTM_Top_fptrunc_cud
+INFO-FLOW: Found component LSTM_Top_fpext_32dEe.
+INFO-FLOW: Append model LSTM_Top_fpext_32dEe
+INFO-FLOW: Found component LSTM_Top_dadd_64neOg.
+INFO-FLOW: Append model LSTM_Top_dadd_64neOg
+INFO-FLOW: Found component LSTM_Top_ddiv_64nfYi.
+INFO-FLOW: Append model LSTM_Top_ddiv_64nfYi
+INFO-FLOW: Found component LSTM_Top_dexp_64ng8j.
+INFO-FLOW: Append model LSTM_Top_dexp_64ng8j
+INFO-FLOW: Handling components in module [exp_generic_double_s] ... 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.compgen.tcl 
+INFO-FLOW: Found component LSTM_Top_mul_72nskbM.
+INFO-FLOW: Append model LSTM_Top_mul_72nskbM
+INFO-FLOW: Found component LSTM_Top_mul_36nslbW.
+INFO-FLOW: Append model LSTM_Top_mul_36nslbW
+INFO-FLOW: Found component LSTM_Top_mul_44nsmb6.
+INFO-FLOW: Append model LSTM_Top_mul_44nsmb6
+INFO-FLOW: Found component LSTM_Top_mul_50nsncg.
+INFO-FLOW: Append model LSTM_Top_mul_50nsncg
+INFO-FLOW: Found component LSTM_Top_mac_mulaocq.
+INFO-FLOW: Append model LSTM_Top_mac_mulaocq
+INFO-FLOW: Found component exp_generic_doublhbi.
+INFO-FLOW: Append model exp_generic_doublhbi
+INFO-FLOW: Found component exp_generic_doublibs.
+INFO-FLOW: Append model exp_generic_doublibs
+INFO-FLOW: Found component exp_generic_doubljbC.
+INFO-FLOW: Append model exp_generic_doubljbC
+INFO-FLOW: Handling components in module [generic_tanh_float_s] ... 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.compgen.tcl 
+INFO-FLOW: Found component LSTM_Top_faddfsubpcA.
+INFO-FLOW: Append model LSTM_Top_faddfsubpcA
+INFO-FLOW: Found component LSTM_Top_fmul_32nqcK.
+INFO-FLOW: Append model LSTM_Top_fmul_32nqcK
+INFO-FLOW: Found component LSTM_Top_fdiv_32nrcU.
+INFO-FLOW: Append model LSTM_Top_fdiv_32nrcU
+INFO-FLOW: Found component LSTM_Top_fcmp_32nsc4.
+INFO-FLOW: Append model LSTM_Top_fcmp_32nsc4
+INFO-FLOW: Handling components in module [hprod] ... 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.compgen.tcl 
+INFO-FLOW: Handling components in module [infer] ... 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.compgen.tcl 
+INFO-FLOW: Found component infer_Weight0_f.
+INFO-FLOW: Append model infer_Weight0_f
+INFO-FLOW: Found component infer_Bias0_f.
+INFO-FLOW: Append model infer_Bias0_f
+INFO-FLOW: Found component infer_Weight0_i.
+INFO-FLOW: Append model infer_Weight0_i
+INFO-FLOW: Found component infer_Bias0_i.
+INFO-FLOW: Append model infer_Bias0_i
+INFO-FLOW: Found component infer_Weight0_c.
+INFO-FLOW: Append model infer_Weight0_c
+INFO-FLOW: Found component infer_Bias0_c.
+INFO-FLOW: Append model infer_Bias0_c
+INFO-FLOW: Found component infer_Weight0_o.
+INFO-FLOW: Append model infer_Weight0_o
+INFO-FLOW: Found component infer_Bias0_o.
+INFO-FLOW: Append model infer_Bias0_o
+INFO-FLOW: Found component infer_Weight_lc.
+INFO-FLOW: Append model infer_Weight_lc
+INFO-FLOW: Found component infer_Bias_lc.
+INFO-FLOW: Append model infer_Bias_lc
+INFO-FLOW: Found component infer_gate_f.
+INFO-FLOW: Append model infer_gate_f
+INFO-FLOW: Found component infer_vec_i.
+INFO-FLOW: Append model infer_vec_i
+INFO-FLOW: Handling components in module [mnist_lstm] ... 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.compgen.tcl 
+INFO-FLOW: Found component mnist_lstm_img_dat.
+INFO-FLOW: Append model mnist_lstm_img_dat
+INFO-FLOW: Found component mnist_lstm_res.
+INFO-FLOW: Append model mnist_lstm_res
+INFO-FLOW: Handling components in module [LSTM_Top] ... 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.compgen.tcl 
+INFO-FLOW: Found component regslice_core.
+INFO-FLOW: Append model regslice_core
+INFO-FLOW: Append model fill_n
+INFO-FLOW: Append model geva_1
+INFO-FLOW: Append model sigmoid
+INFO-FLOW: Append model exp_generic_double_s
+INFO-FLOW: Append model generic_tanh_float_s
+INFO-FLOW: Append model hprod
+INFO-FLOW: Append model infer
+INFO-FLOW: Append model mnist_lstm
+INFO-FLOW: Append model LSTM_Top
+INFO-FLOW: Generating RTL model list ...
+INFO-FLOW: All models in this session: LSTM_Top_fadd_32nbkb LSTM_Top_fptrunc_cud LSTM_Top_fpext_32dEe LSTM_Top_dadd_64neOg LSTM_Top_ddiv_64nfYi LSTM_Top_dexp_64ng8j LSTM_Top_mul_72nskbM LSTM_Top_mul_36nslbW LSTM_Top_mul_44nsmb6 LSTM_Top_mul_50nsncg LSTM_Top_mac_mulaocq exp_generic_doublhbi exp_generic_doublibs exp_generic_doubljbC LSTM_Top_faddfsubpcA LSTM_Top_fmul_32nqcK LSTM_Top_fdiv_32nrcU LSTM_Top_fcmp_32nsc4 infer_Weight0_f infer_Bias0_f infer_Weight0_i infer_Bias0_i infer_Weight0_c infer_Bias0_c infer_Weight0_o infer_Bias0_o infer_Weight_lc infer_Bias_lc infer_gate_f infer_vec_i mnist_lstm_img_dat mnist_lstm_res regslice_core fill_n geva_1 sigmoid exp_generic_double_s generic_tanh_float_s hprod infer mnist_lstm LSTM_Top
+INFO-FLOW: To file: write model LSTM_Top_fadd_32nbkb
+INFO-FLOW: To file: write model LSTM_Top_fptrunc_cud
+INFO-FLOW: To file: write model LSTM_Top_fpext_32dEe
+INFO-FLOW: To file: write model LSTM_Top_dadd_64neOg
+INFO-FLOW: To file: write model LSTM_Top_ddiv_64nfYi
+INFO-FLOW: To file: write model LSTM_Top_dexp_64ng8j
+INFO-FLOW: To file: write model LSTM_Top_mul_72nskbM
+INFO-FLOW: To file: write model LSTM_Top_mul_36nslbW
+INFO-FLOW: To file: write model LSTM_Top_mul_44nsmb6
+INFO-FLOW: To file: write model LSTM_Top_mul_50nsncg
+INFO-FLOW: To file: write model LSTM_Top_mac_mulaocq
+INFO-FLOW: To file: write model exp_generic_doublhbi
+INFO-FLOW: To file: write model exp_generic_doublibs
+INFO-FLOW: To file: write model exp_generic_doubljbC
+INFO-FLOW: To file: write model LSTM_Top_faddfsubpcA
+INFO-FLOW: To file: write model LSTM_Top_fmul_32nqcK
+INFO-FLOW: To file: write model LSTM_Top_fdiv_32nrcU
+INFO-FLOW: To file: write model LSTM_Top_fcmp_32nsc4
+INFO-FLOW: To file: write model infer_Weight0_f
+INFO-FLOW: To file: write model infer_Bias0_f
+INFO-FLOW: To file: write model infer_Weight0_i
+INFO-FLOW: To file: write model infer_Bias0_i
+INFO-FLOW: To file: write model infer_Weight0_c
+INFO-FLOW: To file: write model infer_Bias0_c
+INFO-FLOW: To file: write model infer_Weight0_o
+INFO-FLOW: To file: write model infer_Bias0_o
+INFO-FLOW: To file: write model infer_Weight_lc
+INFO-FLOW: To file: write model infer_Bias_lc
+INFO-FLOW: To file: write model infer_gate_f
+INFO-FLOW: To file: write model infer_vec_i
+INFO-FLOW: To file: write model mnist_lstm_img_dat
+INFO-FLOW: To file: write model mnist_lstm_res
+INFO-FLOW: To file: write model regslice_core
+INFO-FLOW: To file: write model fill_n
+INFO-FLOW: To file: write model geva_1
+INFO-FLOW: To file: write model sigmoid
+INFO-FLOW: To file: write model exp_generic_double_s
+INFO-FLOW: To file: write model generic_tanh_float_s
+INFO-FLOW: To file: write model hprod
+INFO-FLOW: To file: write model infer
+INFO-FLOW: To file: write model mnist_lstm
+INFO-FLOW: To file: write model LSTM_Top
+INFO-FLOW: Finished generating RTL model list.
+
+
+INFO-FLOW: RTL Generation done.
+INFO-FLOW: CAS Generation done.
+INFO-FLOW: CBC Generation done.
+Execute       syn_report -model LSTM_Top -printsummary 
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 105.11 MHz
+INFO-FLOW: DBG:CMD: auto_generate_csynth_design
+INFO-FLOW: DBG:CMD:     auto_generate --sim-model -phase csynth_design -d D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=1 export=0 expOnly=0 dstVlogDir=syn/verilog
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command       ap_source done; 0.147 sec.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'LSTM_Top_mul_72nskbM_MulnS_0'
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'LSTM_Top_mul_36nslbW_MulnS_1'
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'LSTM_Top_mul_44nsmb6_MulnS_2'
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-282] Generating pipelined core: 'LSTM_Top_mul_50nsncg_MulnS_3'
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'exp_generic_doublhbi_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'exp_generic_doublibs_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'exp_generic_doubljbC_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command       ap_source done; 0.337 sec.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command       ap_source done; 0.122 sec.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'infer_Weight0_f_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+WARNING: [RTMG 210-274] Memory 'infer_Bias0_f' is read-only, switch it to a ROM.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'infer_Bias0_f_rom' using block ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'infer_Weight0_i_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+WARNING: [RTMG 210-274] Memory 'infer_Bias0_i' is read-only, switch it to a ROM.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'infer_Bias0_i_rom' using block ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'infer_Weight0_c_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+WARNING: [RTMG 210-274] Memory 'infer_Bias0_c' is read-only, switch it to a ROM.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'infer_Bias0_c_rom' using block ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'infer_Weight0_o_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+WARNING: [RTMG 210-274] Memory 'infer_Bias0_o' is read-only, switch it to a ROM.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'infer_Bias0_o_rom' using block ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'infer_Weight_lc_rom' using auto ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-279] Implementing memory 'infer_Bias_lc_rom' using distributed ROMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'infer_gate_f_ram (RAM)' using block RAMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'infer_vec_i_ram (RAM)' using block RAMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command       ap_source done; 3.578 sec.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.compgen.tcl 
+INFO: [RTMG 210-278] Implementing memory 'mnist_lstm_img_dat_ram (RAM)' using block RAMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO: [RTMG 210-278] Implementing memory 'mnist_lstm_res_ram (RAM)' using distributed RAMs.
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.compgen.tcl 
+INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute             source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute             source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=LSTM_Top xml_exists=0
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command       ap_source done; 0.101 sec.
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.compgen.tcl 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.compgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.compgen.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.constraint.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=28
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=14
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=1 g_has_adaptors=false generate_bd_files=1 #modelList=42 #gSsdmPorts=28
+Execute       source D:/Vivado/Vivado/2019.2/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_export -xo 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_sdx -target 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.compgen.dataonly.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.constraint.tcl 
+Execute       sc_get_clocks LSTM_Top 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute       get_config_debug -directory 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_dadd_3_full_dsp_64_ip.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_ddiv_29_no_dsp_64_ip.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_dexp_16_full_dsp_64_ip.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_fadd_3_full_dsp_32_ip.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_faddfsub_3_full_dsp_32_ip.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_fcmp_0_no_dsp_32_ip.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_fdiv_14_no_dsp_32_ip.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_fmul_2_max_dsp_32_ip.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_fpext_0_no_dsp_32_ip.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_fptrunc_0_no_dsp_64_ip.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.tbgen.tcl 
+Execute       source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute       get_config_sdx -target 
+Execute       get_config_sdx -profile 
+Execute       get_config_rtl -kernel_profile 
+Execute       get_config_rtl -stall_sig_gen 
+Execute       get_config_rtl -profile 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist, skipping opencl info: D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:00:05 ; elapsed = 00:00:28 . Memory (MB): peak = 603.598 ; gain = 510.961
+INFO: [VHDL 208-304] Generating VHDL RTL for LSTM_Top.
+INFO: [VLOG 209-307] Generating Verilog RTL for LSTM_Top.
+Command     autosyn done; 10.874 sec.
+Command   csynth_design done; 26.506 sec.
+Command ap_source done; 27.387 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1 opened at Thu May 22 20:22:06 +0800 2025
+Execute     config_clock -quiet -name default -period 10 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.lib 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/plb46.lib 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/fsl.lib 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/axi4.lib 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.lib 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.lib 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.lib 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfft.lib 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfir.lib 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     open_platform DefaultPlatform 
+Execute     import_lib D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.hlp 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/target_info.tcl 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.hlp 
+Execute             source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.hlp 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xc7z020clg400-1 
+Execute       ap_part_info -name xc7z020clg400-1 -data single -quiet 
+Command       ap_part_info done; 0.583 sec.
+Execute       ap_part_info -name xc7z020clg400-1 -data info 
+Execute       add_library xilinx/zynq/zynq:xc7z020:-clg400:-1 
+Execute         get_default_platform 
+Execute         ap_part_info -data single -name xc7z020-clg400-1 
+Execute         ap_part_info -name xc7z020-clg400-1 -data resources 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute         ap_part_info -name xc7z020-clg400-1 -data info 
+Execute         config_chip_info -quiet -speed slow 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+Execute       ap_part_info -name xc7z020-clg400-1 -data info 
+Execute       get_default_platform 
+Command     set_part done; 0.675 sec.
+Execute     ap_part_info -data single -name xc7z020clg400-1 
+Execute     ap_part_info -name xc7z020clg400-1 -data resources 
+Execute     ap_part_info -name xc7z020clg400-1 -data info 
+Execute     ap_part_info -name xc7z020clg400-1 -data info 
+Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
+Execute     ap_part_info -name xc7z020clg400-1 -data info 
+Execute     config_chip_info -quiet -speed slow 
+Execute     config_export -format=ip_catalog 
+Execute     config_export -rtl=verilog 
+Command   open_solution done; 0.822 sec.
+Execute   export_design -rtl verilog -format ip_catalog -version 2025.5.22 
+Execute     get_config_export -acc 
+Execute     get_config_export -clock_margin 
+Execute     get_config_export -custom_script 
+Execute     get_config_export -description 
+Execute     get_config_export -display_name 
+Execute     get_config_export -driver_input_dir 
+Execute     get_config_export -ipname 
+Execute     get_config_export -kernel_drc 
+Execute     get_config_export -library 
+Execute     get_config_export -qor_test 
+Execute     get_config_export -sdaccel 
+Execute     get_config_export -sim 
+Execute     get_config_export -taxonomy 
+Execute     get_config_export -use_ip 
+Execute     get_config_export -use_netlist 
+Execute     get_config_export -vendor 
+Execute     get_config_export -xo 
+Execute     config_export -format=ip_catalog -rtl=verilog -version=2025.5.22 
+INFO-FLOW: DBG:CMD: export_design_wrap: -format ip_catalog -rtl verilog -version 2025.5.22
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_export -vivado_clock 
+Execute     get_top 
+Execute     get_config_sdx -target 
+Execute     get_config_rtl -module_auto_prefix 
+Execute     get_config_sdx -target 
+Execute     get_config_sdx -target 
+INFO-FLOW: DBG:CMD:   auto_impl: pack: -export -tool vivado -rtl verilog -sdx-target none
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=10.000 (was NA)
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: automg_wrap -export -pcore_version 1.00.a -rtl vlog -sdx-target none -tool Vivado -impltomg_flag
+INFO-FLOW: DBG:CMD:     auto_generate -export -pcore_version 1.00.a -rtl vlog -sdx-target none -tool Vivado -impltomg_flag
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD: read_platform_lib D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=LSTM_Top xml_exists=1
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       export_impl_rtl
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.verilog
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.compgen.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.compgen.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Command     ap_source done; 0.132 sec.
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.compgen.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.compgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.compgen.tcl 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute       ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.compgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.compgen.tcl 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.constraint.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       hasPcoreIpAdapter=false #gSsdmPorts=28
+INFO-FLOW: DBG:CMD: Skipping loadAnalyze_DB, #g_database=14
+INFO-FLOW: DBG:CMD:       generate_json is_phase_csynth=0 g_has_adaptors=false generate_bd_files=1 #modelList=42 #gSsdmPorts=28
+Execute     source D:/Vivado/Vivado/2019.2/tps/tcl/tcllib1.11.1/fileutil/fileutil.tcl 
+Execute       source D:/Vivado/Vivado/2019.2/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
+Execute     source D:/Vivado/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute     source D:/Vivado/Vivado/2019.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute       source D:/Vivado/Vivado/2019.2/tps/tcl/tcllib1.11.1/try/try.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_export -xo 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_sdx -target 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.compgen.dataonly.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.constraint.tcl 
+Execute     sc_get_clocks LSTM_Top 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_debug -directory 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_dadd_3_full_dsp_64_ip.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_ddiv_29_no_dsp_64_ip.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_dexp_16_full_dsp_64_ip.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_fadd_3_full_dsp_32_ip.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_faddfsub_3_full_dsp_32_ip.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_fcmp_0_no_dsp_32_ip.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_fdiv_14_no_dsp_32_ip.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_fmul_2_max_dsp_32_ip.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_fpext_0_no_dsp_32_ip.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/misc/LSTM_Top_ap_fptrunc_0_no_dsp_64_ip.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/fill_n.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/geva_1.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/sigmoid.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/exp_generic_double_s.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/generic_tanh_float_s.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/hprod.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/infer.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/mnist_lstm.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     get_config_sdx -target 
+Execute     get_config_sdx -profile 
+Execute     get_config_rtl -kernel_profile 
+Execute     get_config_rtl -stall_sig_gen 
+Execute     get_config_rtl -profile 
+INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist, skipping opencl info: D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/kernel.internal.xml
+INFO-FLOW: DBG:CMD:       copying IP vlog from D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/verilog
+INFO-FLOW: DBG:CMD:       copying IP vhdl from D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/vhdl
+INFO-FLOW: DBG:CMD:       generate_ip_script #gSsdmPorts=28
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     get_config_sdx -target 
+Execute     get_config_debug -directory 
+INFO-FLOW: DBG:CMD:       generate_ip_auxiliary
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=LSTM_Top
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       generate_top_info
+INFO-FLOW: DBG:CMD:       prepArgInfo -> loadAnalyze_DB top_module=LSTM_Top
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.rtl_wrap.cfg.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_ip_bd_script
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.constraint.tcl 
+INFO-FLOW: DBG:CMD:       generate_ipi_example_script
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:       generate_syn_sh
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:CMD:       generate_imp_constraints
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.constraint.tcl 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/LSTM_Top.tbgen.tcl 
+INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD: read_platform_lib D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/common.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/op.gen 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/generic/autopilot/interface.gen 
+Execute     source D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/.autopilot/db/global.setting.tcl 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/fsl.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/saxilite.gen 
+Execute           source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/maxi.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/util.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/dsp48.gen 
+Execute     source D:/Vivado/Vivado/2019.2/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source D:/Vivado/Vivado/2019.2/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     ap_part_info -name xc7z020-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z020-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:CMD:     exec D:/npu_dla/lab3/lab3_student/lab3_student/lstm_hls/solution1/impl/ip/pack.bat
+Command   export_design done; 27.922 sec.
+Command ap_source done; 28.746 sec.
+Execute cleanup_all 

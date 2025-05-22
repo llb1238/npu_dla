@@ -1,0 +1,130 @@
+
+
+================================================================
+== Vivado HLS Report for 'fill_n'
+================================================================
+* Date:           Thu May 22 20:21:38 2025
+
+* Version:        2019.2 (Build 2704478 on Wed Nov 06 22:10:23 MST 2019)
+* Project:        lstm_hls
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  | 10.00 ns | 3.254 ns |   1.25 ns  |
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |      129|      129| 1.290 us | 1.290 us |  129|  129|   none  |
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |          |  Latency (cycles) | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name|   min   |   max   |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+        |- Loop 1  |      128|      128|         1|          -|          -|   128|    no    |
+        +----------+---------+---------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 2
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 2 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 3 [1/1] (1.76ns)   --->   "br label %1" [D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798]   --->   Operation 3 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 3.25>
+ST_2 : Operation 4 [1/1] (0.00ns)   --->   "%p_0_rec_i = phi i8 [ 0, %0 ], [ %add_ln762, %2 ]" [D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798]   --->   Operation 4 'phi' 'p_0_rec_i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 5 [1/1] (0.00ns)   --->   "%p_0_rec_i_cast = zext i8 %p_0_rec_i to i64" [D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798]   --->   Operation 5 'zext' 'p_0_rec_i_cast' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%p_first_addr = getelementptr [128 x float]* %p_first, i64 0, i64 %p_0_rec_i_cast" [D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798]   --->   Operation 6 'getelementptr' 'p_first_addr' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 128, i64 128, i64 128)"   --->   Operation 7 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (1.55ns)   --->   "%icmp_ln762 = icmp eq i8 %p_0_rec_i, -128" [D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798]   --->   Operation 8 'icmp' 'icmp_ln762' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 9 [1/1] (1.91ns)   --->   "%add_ln762 = add i8 %p_0_rec_i, 1" [D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798]   --->   Operation 9 'add' 'add_ln762' <Predicate = true> <Delay = 1.91> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.91> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "br i1 %icmp_ln762, label %"__fill_n_a<float*, int, double>.exit", label %2" [D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798]   --->   Operation 10 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (3.25ns)   --->   "store float 0.000000e+00, float* %p_first_addr, align 4" [D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:763->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798]   --->   Operation 11 'store' <Predicate = (!icmp_ln762)> <Delay = 3.25> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 128> <RAM>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "br label %1" [D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798]   --->   Operation 12 'br' <Predicate = (!icmp_ln762)> <Delay = 0.00>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 13 'ret' <Predicate = (icmp_ln762)> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('p_0_rec_i', D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798) with incoming values : ('add_ln762', D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798) [4]  (1.77 ns)
+
+ <State 2>: 3.25ns
+The critical path consists of the following:
+	'phi' operation ('p_0_rec_i', D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798) with incoming values : ('add_ln762', D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798) [4]  (0 ns)
+	'getelementptr' operation ('p_first_addr', D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:762->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798) [6]  (0 ns)
+	'store' operation ('store_ln763', D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:763->D:/Vivado/Vivado/2019.2/win64/tools/clang/bin\..\lib\clang\3.1/../../../include/c++/4.5.2\bits/stl_algobase.h:798) of constant 0 on array 'p_first' [12]  (3.25 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

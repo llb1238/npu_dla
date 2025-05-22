@@ -1,0 +1,25 @@
+INFO: [HLS 200-10] Running 'D:/Vivado/Vivado/2019.2/bin/unwrapped/win64.o/vivado_hls.exe'
+INFO: [HLS 200-10] For user '王怡恒' on host 'laptop-59hqhqek' (Windows NT_amd64 version 6.2) on Thu May 22 20:19:32 +0800 2025
+INFO: [HLS 200-10] In directory 'D:/npu_dla/lab3/lab3_Completed'
+Sourcing Tcl script 'D:/npu_dla/lab3/lab3_Completed/lstm_hls/solution1/csynth.tcl'
+INFO: [HLS 200-10] Opening project 'D:/npu_dla/lab3/lab3_Completed/lstm_hls'.
+INFO: [HLS 200-10] Adding design file 'lstm_hls/rnn.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'lstm_hls/rnn.h' to the project
+INFO: [HLS 200-10] Adding design file 'lstm_hls/rnn_top.cpp' to the project
+INFO: [HLS 200-10] Adding design file 'lstm_hls/utils.h' to the project
+INFO: [HLS 200-10] Adding design file 'lstm_hls/weight.h' to the project
+INFO: [HLS 200-10] Adding test bench file 'lstm_hls/main.cpp' to the project
+INFO: [HLS 200-10] Opening solution 'D:/npu_dla/lab3/lab3_Completed/lstm_hls/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+invalid command name "config_cosim"
+    while executing
+"source D:/npu_dla/lab3/lab3_Completed/lstm_hls/solution1/csynth.tcl"
+    invoked from within
+"hls::main D:/npu_dla/lab3/lab3_Completed/lstm_hls/solution1/csynth.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$args"
+    (procedure "hls_proc" line 5)
+    invoked from within
+"hls_proc $argv"
