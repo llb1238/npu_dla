@@ -161,6 +161,36 @@
                         					
                     </folderInfo>
                     					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.debug.173771842.1983967763" name="main.cpp" rcbsApplicability="disable" resourcePath="testbench/main.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1945591825.976260163">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1945591825.976260163" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1945591825">
+                            							
+                            <option id="gnu.cpp.compiler.option.preprocessor.def.1008569815" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+                            							
+                            <option id="gnu.cpp.compiler.option.include.paths.738078786" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="D:/npu_dla/lab3/lab3_Completed"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/Vivado/Vivado/2019.2/win64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/Vivado/Vivado/2019.2/win64/tools/systemc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/Vivado/Vivado/2019.2/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/Vivado/Vivado/2019.2/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/Vivado/Vivado/2019.2/include/ap_sysc"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.other.other.1828859086" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1756643611" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
+                    					
                     <sourceEntries>
                         						
                         <entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
@@ -313,6 +343,36 @@
                         					
                     </folderInfo>
                     					
+                    <fileInfo id="cdt.managedbuild.config.gnu.exe.release.1346575318.1870329725" name="main.cpp" rcbsApplicability="disable" resourcePath="testbench/main.cpp" toolsToInvoke="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1190559665.520074303">
+                        						
+                        <tool id="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1190559665.520074303" name="GCC C++ Compiler" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.exe.release.1190559665">
+                            							
+                            <option id="gnu.cpp.compiler.option.preprocessor.def.82127928" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def"/>
+                            							
+                            <option id="gnu.cpp.compiler.option.include.paths.2115612106" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
+                                								
+                                <listOptionValue builtIn="false" value="D:/npu_dla/lab3/lab3_Completed"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/Vivado/Vivado/2019.2/win64/tools/auto_cc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/Vivado/Vivado/2019.2/win64/tools/systemc/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/Vivado/Vivado/2019.2/include"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/Vivado/Vivado/2019.2/include/etc"/>
+                                								
+                                <listOptionValue builtIn="false" value="D:/Vivado/Vivado/2019.2/include/ap_sysc"/>
+                                							
+                            </option>
+                            							
+                            <option id="gnu.cpp.compiler.option.other.other.435206517" name="Other flags" superClass="gnu.cpp.compiler.option.other.other" value="-Wno-unknown-pragmas -c -fmessage-length=0" valueType="string"/>
+                            							
+                            <inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.2017104516" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
+                            						
+                        </tool>
+                        					
+                    </fileInfo>
+                    					
                     <sourceEntries>
                         						
                         <entry excluding="solution1|*.c*|*.C*" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
@@ -335,11 +395,13 @@
         	
     </storageModule>
     	
+    <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+    	
     <storageModule moduleId="scannerConfiguration">
         		
         <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
         		
-        <scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.173771842;cdt.managedbuild.config.gnu.exe.debug.173771842.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1945591825;cdt.managedbuild.tool.gnu.cpp.compiler.input.1038464580">
+        <scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.173771842;cdt.managedbuild.config.gnu.exe.debug.173771842.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1292566094;cdt.managedbuild.tool.gnu.c.compiler.input.2080068378">
             			
             <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
             		
@@ -357,14 +419,12 @@
             		
         </scannerConfigBuildInfo>
         		
-        <scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.173771842;cdt.managedbuild.config.gnu.exe.debug.173771842.;cdt.managedbuild.tool.gnu.c.compiler.exe.debug.1292566094;cdt.managedbuild.tool.gnu.c.compiler.input.2080068378">
+        <scannerConfigBuildInfo instanceId="cdt.managedbuild.config.gnu.exe.debug.173771842;cdt.managedbuild.config.gnu.exe.debug.173771842.;cdt.managedbuild.tool.gnu.cpp.compiler.exe.debug.1945591825;cdt.managedbuild.tool.gnu.cpp.compiler.input.1038464580">
             			
             <autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId=""/>
             		
         </scannerConfigBuildInfo>
         	
     </storageModule>
-    	
-    <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
     
 </cproject>

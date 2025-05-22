@@ -5,12 +5,12 @@
 ############################################################
 open_project lstm_hls
 set_top LSTM_Top
-add_files lstm_hls/rnn.cpp
-add_files lstm_hls/rnn.h
-add_files lstm_hls/rnn_top.cpp
-add_files lstm_hls/utils.h
 add_files lstm_hls/weight.h
-add_files -tb lstm_hls/main.cpp
+add_files lstm_hls/utils.h
+add_files lstm_hls/rnn_top.cpp
+add_files lstm_hls/rnn.h
+add_files lstm_hls/rnn.cpp
+add_files -tb lstm_hls/main.cpp -cflags "-Wno-unknown-pragmas" -csimflags "-Wno-unknown-pragmas"
 open_solution "solution1"
 set_part {xc7z020-clg400-1}
 create_clock -period 10 -name default
