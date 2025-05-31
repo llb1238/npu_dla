@@ -1,1 +1,0 @@
-set ::AESL_AUTOSIM::gTopFileName /home/llb/college/dla/npu_dla/lab3_student/lstm_hls/solution1/./sim/autowrap/testbench/rnn_top.cpp_pre.cpp.tb.cpp
