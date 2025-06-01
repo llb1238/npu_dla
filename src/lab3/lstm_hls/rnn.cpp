@@ -4,149 +4,174 @@
 #include "rnn.h"
 #include "weight.h"
 
-// ¾ØÕóÓëÏòÁ¿µÄ³Ë·¨
-#define gemvm(res, a, b, row, col) \
-{ \
-	std::fill_n(res, row, 0.0); \
-	for (int r = 0; r < row; r++) \
-		for (int c = 0; c < col; c++) \
-			res[r] += a[r][c] * b[c]; \
-}
+// ????????
+#define gemvm(res, a, b, row, col)  \
+	{                                 \
+		std::fill_n(res, row, 0.0);     \
+		for (int r = 0; r < row; r++)   \
+			for (int c = 0; c < col; c++) \
+				res[r] += a[r][c] * b[c];   \
+	}
 
-// ÏòÁ¿µÄsigmoidº¯Êı
-inline void sigmoid(float* res, float* a, int size)
+// ???sigmoid??
+inline void sigmoid(float *res, float *a, int size)
 {
-	// ¼ÆËãÊäÈëÏòÁ¿aµÄsigmoidº¯ÊıÖµ
-	// ¼ÆËã½á¹û´æ´¢µ½ÏòÁ¿resÖĞ
-	// TODO:
-
+	// ??????a?sigmoid????
+	// ?????????res??
+	for (int i = 0; i < size; i++)
+	{
+		res[i] = 1.0 / (1.0 + exp(-a[i]));
+	}
 }
 
-// ÏòÁ¿µÄtanhº¯Êı
-inline void tanh(float* res, float* a, int size)
+// ???tanh??
+inline void tanh(float *res, float *a, int size)
 {
-	// ¼ÆËãÊäÈëÏòÁ¿aµÄË«ÇúÕıÇĞº¯ÊıÖµ
-	// ¼ÆËã½á¹û´æ´¢µ½ÏòÁ¿resÖĞ
-	// TODO:
-
+	// ??????a??????????
+	// ?????????res??
+	for (int i = 0; i < size; i++)
+	{
+		res[i] = std::tanh(a[i]);
+	}
 }
 
-// ÏòÁ¿¼Ó·¨
-inline void geva(float* res, float* a, int size)
+// ????
+inline void geva(float *res, float *a, int size)
 {
-	// ½«ÏòÁ¿resºÍÏòÁ¿aÏà¼Ó
-	// ¼ÆËã½á¹û´æ´¢µ½ÏòÁ¿resÖĞ
-	// TODO:
-
+	// ???res???a??
+	// ?????????res??
+	for (int i = 0; i < size; i++)
+	{
+		res[i] += a[i];
+	}
 }
 
-// ÏòÁ¿µÄHadamard»ı
-inline void hprod(float* res, float* a, float* b, int size)
+// ???Hadamard??
+inline void hprod(float *res, float *a, float *b, int size)
 {
-	// ¼ÆËãÏòÁ¿aºÍÏòÁ¿bµÄHadamard»ı
-	// ¼ÆËã½á¹û´æ´¢µ½ÏòÁ¿resÖĞ
-	// TODO:
-	
+	// ????a???b?Hadamard??
+	// ?????????res??
+	for (int i = 0; i < size; i++)
+	{
+		res[i] = a[i] * b[i];
+	}
 }
 
-// RNNÇ°ÏòÍÆµ¼(ÊäÈë²ã->LSTM->ÏßĞÔ·ÖÀàÆ÷)
+// RNNå‰å‘ä¼ æ’­(è¾“å…¥å±‚->LSTM->è¾“å‡ºå±‚/åˆ†ç±»å™¨)
 #if CSIM_ON == 1
 int infer(float input[IMG_SIZE])
 #else
 void infer(float input[IMG_SIZE], float res[CLASS_NUM])
 #endif
 {
-	float gate_f[HIDDEN_DIM] = { 0.0 };		// LSTM cellµÄÒÅÍüÃÅ¿ØÖÆÏòÁ¿
-	float gate_i[HIDDEN_DIM] = { 0.0 };		// LSTM cellµÄÊäÈëÃÅ¿ØÖÆÏòÁ¿
-	float stat_C[HIDDEN_DIM] = { 0.0 };		// LSTM cellµÄĞÂ×´Ì¬
-	float C_t[HIDDEN_DIM] = { 0.0 };		// LSTM cellµÄ×´Ì¬
-	float gate_o[HIDDEN_DIM] = { 0.0 };		// LSTM cellµÄÊä³öÃÅ¿ØÖÆÏòÁ¿
-	float h_t[HIDDEN_DIM] = { 0.0 };		// LSTM cellµÄÊä³ö
+    // ä¸ºå…³é”®æ•°ç»„æ·»åŠ LUTRAMæŒ‡ä»¤ï¼Œå‡å°‘BRAMä½¿ç”¨
+    float gate_f[HIDDEN_DIM] = {0.0}; // LSTM cellçš„é—å¿˜é—¨
+    float gate_i[HIDDEN_DIM] = {0.0}; // LSTM cellçš„è¾“å…¥é—¨
+    float stat_C[HIDDEN_DIM] = {0.0}; // LSTM cellçš„å€™é€‰æ€
+    float C_t[HIDDEN_DIM] = {0.0};    // LSTM cellçš„çŠ¶æ€
+    float gate_o[HIDDEN_DIM] = {0.0}; // LSTM cellçš„è¾“å‡ºé—¨
+    float h_t[HIDDEN_DIM] = {0.0};    // LSTM cellçš„è¾“å‡º
+    
+    #pragma HLS RESOURCE variable=gate_f core=RAM_2P_LUTRAM
+    #pragma HLS RESOURCE variable=gate_i core=RAM_2P_LUTRAM
+    #pragma HLS RESOURCE variable=gate_o core=RAM_2P_LUTRAM
+    #pragma HLS RESOURCE variable=h_t core=RAM_2P_LUTRAM
 
-	float vec_i[INPUT_DIM + HIDDEN_DIM];	// LSTM cellµÄÊäÈëÏòÁ¿[x(t), h0(t-1)]
-	float vec_tmp[HIDDEN_DIM];				// ÖĞ¼ä±äÁ¿
+    float vec_i[INPUT_DIM + HIDDEN_DIM]; // LSTM cellçš„è¾“å…¥å‘é‡[x(t), h0(t-1)]
+    float vec_tmp[HIDDEN_DIM];           // ä¸´æ—¶å‘é‡
+    
+    #pragma HLS RESOURCE variable=vec_tmp core=RAM_2P_LUTRAM
 
-	// ÊäÈë²ã->Òş²Ø²ã(LSTM cell)
-	for (int i = 0; i < INPUT_DIM; i++)
-	{
+    // è¾“å…¥å±‚->éšè—å±‚(LSTM cell)
+    for (int i = 0; i < INPUT_DIM; i++)
+    {
 		/*
-		 * Í·ÎÄ¼şweight.hÖĞ´æ´¢ÁËRNNÍøÂçµÄÈ¨ÖµºÍÆ«ÖÃ, °üº¬ÒÔÏÂ¼¸¸öFP32Êı×é:
+		 * ???weight.h????RNN????????, ??????FP32??:
 		 *
-		 * 1. LSTM cellÒÅÍüÃÅµÄÈ¨ÖµºÍÆ«ÖÃ:
+		 * 1. LSTM cell???????????:
 		 *   float Weight0_f[HIDDEN_DIM][INPUT_DIM + HIDDEN_DIM];
 		 *   float Bias0_f[HIDDEN_DIM];
 		 *
-		 * 2. LSTM cellÊäÈëÃÅµÄÈ¨ÖµÓëÆ«ÖÃ:
+		 * 2. LSTM cell???????????:
 		 *   float Weight0_i[HIDDEN_DIM][INPUT_DIM + HIDDEN_DIM];
 		 *   float Bias0_i[HIDDEN_DIM];
 		 *
-		 * 3. LSTM cellÊäÈëÃÅ²úÉúµÄºòÑ¡×´Ì¬µÄÈ¨ÖµÓëÆ«ÖÃ:
+		 * 3. LSTM cell????????????????????:
 		 *   float Weight0_c[HIDDEN_DIM][INPUT_DIM + HIDDEN_DIM];
 		 *   float Bias0_c[HIDDEN_DIM];
 		 *
-		 * 4. LSTM cellÊä³öÃÅµÄÈ¨ÖµºÍÆ«ÖÃ:
+		 * 4. LSTM cell???????????:
 		 *   float Weight0_o[HIDDEN_DIM][INPUT_DIM + HIDDEN_DIM];
 		 *   float Bias0_o[HIDDEN_DIM];
 		 *
-		 * 5. Êä³ö²ãÏßĞÔ·ÖÀàÆ÷µÄÈ¨ÖµºÍÆ«ÖÃ:
+		 * 5. ??????????????:
 		 *   float Weight_lc[CLASS_NUM][HIDDEN_DIM];
 		 *   float Bias_lc[CLASS_NUM];
 		 * */
 
-		// ¹¹ÔìLSTM cell0µÄÊäÈëÏòÁ¿
-		for (int j = 0; j < INPUT_DIM; j++)		vec_i[j] = input[i * INPUT_DIM + j];
-		for (int j = 0; j < HIDDEN_DIM; j++)	vec_i[INPUT_DIM + j] = h_t[j];
+		// ????LSTM cell0??????
+		for (int j = 0; j < INPUT_DIM; j++)
+			vec_i[j] = input[i * INPUT_DIM + j];
+		for (int j = 0; j < HIDDEN_DIM; j++)
+			vec_i[INPUT_DIM + j] = h_t[j];
 
 		/*
-		 * 1. ¼ÆËãLSTM cellµÄÒÅÍüÃÅ¿ØÖÆÏòÁ¿.
+		 * 1. ??LSTM cell????????.
 		 * */
-		// TODO:
-
+		gemvm(vec_tmp, Weight0_f, vec_i, HIDDEN_DIM, INPUT_DIM + HIDDEN_DIM);
+		geva(vec_tmp, Bias0_f, HIDDEN_DIM);
+		sigmoid(gate_f, vec_tmp, HIDDEN_DIM);
 
 		/*
-		 * 2. ¼ÆËãLSTM cellµÄÊäÈëÃÅ¿ØÖÆÏòÁ¿.
+		 * 2. ??LSTM cell????????.
 		 * */
-		// TODO:
-
+		gemvm(vec_tmp, Weight0_i, vec_i, HIDDEN_DIM, INPUT_DIM + HIDDEN_DIM);
+		geva(vec_tmp, Bias0_i, HIDDEN_DIM);
+		sigmoid(gate_i, vec_tmp, HIDDEN_DIM);
 
 		/*
-		 * 3. ¼ÆËãLSTM cellÊäÈëÃÅ²úÉúµÄºòÑ¡×´Ì¬ÏòÁ¿.
+		 * 3. ??LSTM cell???????????????.
 		 * */
-		// TODO:
-
+		gemvm(vec_tmp, Weight0_c, vec_i, HIDDEN_DIM, INPUT_DIM + HIDDEN_DIM);
+		geva(vec_tmp, Bias0_c, HIDDEN_DIM);
+		tanh(stat_C, vec_tmp, HIDDEN_DIM);
 
 		/*
-		 * 4. ¼ÆËãLSTM cellµÄÊä³öÃÅ¿ØÖÆÏòÁ¿.
+		 * 4. ??LSTM cell????????.
 		 * */
-		// TODO:
-
+		gemvm(vec_tmp, Weight0_o, vec_i, HIDDEN_DIM, INPUT_DIM + HIDDEN_DIM);
+		geva(vec_tmp, Bias0_o, HIDDEN_DIM);
+		sigmoid(gate_o, vec_tmp, HIDDEN_DIM);
 
 		/*
-		 * 5. ¼ÆËãLSTM cellµÄĞÂ×´Ì¬.
+		 * 5. ??LSTM cell??????.
 		 * */
-		// TODO:
-
+		hprod(vec_tmp, gate_f, C_t, HIDDEN_DIM); // f_t * C_{t-1}
+		hprod(C_t, gate_i, stat_C, HIDDEN_DIM);	 // i_t * C?_t
+		geva(C_t, vec_tmp, HIDDEN_DIM);					 // C_t = f_t * C_{t-1} + i_t * C?_t
 
 		/*
-		 * 6. ¼ÆËãLSTM cellµÄÊä³ö.
+		 * 6. ??LSTM cell????.
 		 * */
-		// TODO:
-
+		tanh(vec_tmp, C_t, HIDDEN_DIM);					 // tanh(C_t)
+		hprod(h_t, gate_o, vec_tmp, HIDDEN_DIM); // h_t = o_t * tanh(C_t)
 	}
 
 #if CSIM_ON == 1
-	float res[CLASS_NUM];
+    float res[CLASS_NUM];
+    #pragma HLS RESOURCE variable=res core=RAM_2P_LUTRAM
 #endif
 
-	// Òş²Ø²ã(LSTM cell)->Êä³ö²ã(ÏßĞÔ·ÖÀàÆ÷)
-	gemvm(res, Weight_lc, h_t, CLASS_NUM, HIDDEN_DIM);
-	geva(res, Bias_lc, CLASS_NUM);
+    // éšè—å±‚(LSTM cell)->è¾“å‡ºå±‚(åˆ†ç±»å™¨/å…¨è¿æ¥)
+    gemvm(res, Weight_lc, h_t, CLASS_NUM, HIDDEN_DIM);
+    geva(res, Bias_lc, CLASS_NUM);
 
 #if CSIM_ON == 1
-	int label = 0;
-	for (int i = 1; i < CLASS_NUM; i++)
-		if (res[i] > res[label]) label = i;
+    int label = 0;
+    for (int i = 1; i < CLASS_NUM; i++)
+        if (res[i] > res[label])
+            label = i;
 
-	return label;
+    return label;
 #endif
 }
