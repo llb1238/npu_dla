@@ -1,7 +1,7 @@
 #include "systolic_array.h"
-//#include <cmath>
+// #include <cmath>
 
-template<typename T>
+template <typename T>
 struct Process_Element
 {
 	T a, b, val;
@@ -20,16 +20,16 @@ struct Process_Element
 
 	void process(T a_i, T b_i)
 	{
-		a = a_i;			// a´Ó×óÍùÓÒ´«µİ
-		b = b_i;			// b´ÓÉÏÍùÏÂ´«µİ
-		val += a_i*b_i;
+		a = a_i; // aä»å·¦åˆ°å³ä¼ ï¿½??
+		b = b_i; // bä»ä¸Šåˆ°ä¸‹ä¼ ï¿½??
+		val += a_i * b_i;
 	}
 };
 
-template<typename T, int LEN>
+template <typename T, int LEN>
 struct Systolic_Array
 {
-	// ¶¨ÒåÓÉÈô¸ÉPE×é³ÉµÄÂö¶¯ÕóÁĞ·½Õó
+	// å®šä¹‰ç”±è‹¥å¹²PEç»„æˆçš„è„‰åŠ¨é˜µåˆ—æ–¹ï¿½???
 	Process_Element<T> pe[LEN][LEN];
 
 	void reset()
@@ -46,142 +46,152 @@ struct Systolic_Array
 				pe[r][c].reset();
 	}
 
-	// Ö´ĞĞÒ»´Îpulseº¯Êı£¬Êı¾İÔÚÂö¶¯ÕóÁĞµÄË®Æ½·½ÏòºÍÊúÖ±·½ÏòÉÏ¾ù×ßÁËÒ»²½£¬¼´Õû¸öÕóÁĞµÄÂö²«ÌøÁËÒ»´Î
+	// æ‰§è¡Œï¿½???æ¬¡pulseå‡½æ•°ï¼Œæ•°æ®åœ¨è„‰åŠ¨é˜µåˆ—çš„æ°´å¹³æ–¹å‘å’Œç«–ç›´æ–¹å‘ä¸Šå‡èµ°äº†ï¿½???æ­¥ï¼Œå³æ•´ä¸ªé˜µåˆ—çš„è„‰æè·³äº†ï¿½???ï¿½???
 	void pulse(T a_vec[LEN], T b_vec[LEN])
 	{
-		systolic_array_outer_loop:
-		// ·½Õó´Ó×óÉÏ½Ç×ßµ½ÓÒÏÂ½Ç£¬×Ü¹²ĞèÒª2*LEN-1¸östep
-		for (int i = 2*LEN - 2; i >= 0; i--)
+	systolic_array_outer_loop:
+		// æ–¹é˜µä»å·¦ä¸Šè§’èµ°åˆ°å³ä¸‹è§’ï¼Œæ€»å…±ï¿½???ï¿½???2*LEN-1ä¸ªstep
+		for (int i = 2 * LEN - 2; i >= 0; i--)
 		{
-			// TODO: ¼ÆËãÃ¿Ò»¸östepĞèÒª´¦ÀíµÄPEÊı
-			int pe_num = ???
+			// è®¡ç®—æ¯ä¸€ä¸ªstepï¿½???è¦å¤„ç†çš„PEï¿½???
+			int pe_num = (i < LEN) ? (i + 1) : (2 * LEN - 1 - i);
 
-			systolic_array_inner_loop:
+		systolic_array_inner_loop:
 			for (int j = 0; j < pe_num; j++)
 			{
-				// TODO: »ñÈ¡µ±Ç°PEµÄ×ø±ê
-				???
+				// è·å–å½“å‰PEçš„åï¿½???
+				int row = (i < LEN) ? i - j : LEN - 1 - j;
+				int col = (i < LEN) ? j : j + i - LEN + 1;
 
-				// TODO: »ñÈ¡µ±Ç°PEµÄ×ó²àÊäÈëaºÍÉÏ·½ÊäÈëb
-				???
+				// è·å–å½“å‰PEçš„å·¦ä¾§è¾“å…¥aå’Œä¸Šæ–¹è¾“å…¥b
+				T a_in = (col == 0) ? a_vec[row] : pe[row][col - 1].a;
+				T b_in = (row == 0) ? b_vec[col] : pe[row - 1][col].b;
 
-				// TODO: ÀûÓÃaºÍb¸üĞÂPE
-				???
+				// åˆ©ç”¨aå’Œbæ›´æ–°PE
+				pe[row][col].process(a_in, b_in);
 			}
 		}
 	}
 
-	// Ö´ĞĞÒ»´Îpulseº¯Êı£¬ÓĞĞ§Êı¾İÔÚÂö¶¯ÕóÁĞµÄ2¸ö·½ÏòÉÏ¾ù×ßÁËÒ»²½£¬¼´½ö¹¤×÷µÄPE´òÁËÒ»ÅÄ£¬ÆäÓàPE²»±ä
+	// æ‰§è¡Œï¿½???æ¬¡pulseå‡½æ•°ï¼Œæœ‰æ•ˆæ•°æ®åœ¨è„‰åŠ¨é˜µåˆ—ï¿½???2ä¸ªæ–¹å‘ä¸Šå‡èµ°äº†ä¸€æ­¥ï¼Œå³ä»…å·¥ä½œçš„PEæ‰“äº†ï¿½???æ‹ï¼Œå…¶ä½™PEä¸å˜
 	void pulse(T a_vec[LEN], int a_size, T b_vec[LEN], int b_size)
 	{
 		int shorter, longer;
 		if (a_size < b_size)
 		{
 			shorter = a_size;
-			longer  = b_size;
+			longer = b_size;
 		}
 		else
 		{
 			shorter = b_size;
-			longer  = a_size;
+			longer = a_size;
 		}
 
-		systolic_array_outer_loop:
-		// ÕóÁĞ´Ó×óÉÏ½Ç×ßµ½ÓÒÏÂ½Ç£¬×Ü¹²ĞèÒª???¸östep
-		for (int i = ???; i >= 0; i--)
+	systolic_array_outer_loop:
+		// é˜µåˆ—ä»å·¦ä¸Šè§’èµ°åˆ°å³ä¸‹è§’ï¼Œæ€»å…±ï¿½???è¦a_size+b_size-1ä¸ªstep
+		for (int i = a_size + b_size - 2; i >= 0; i--)
 		{
-			// TODO: ¼ÆËãÃ¿Ò»¸östepĞèÒª´¦ÀíµÄPEÊı
-			int pe_num = ???
+			// è®¡ç®—æ¯ä¸€ä¸ªstepï¿½???è¦å¤„ç†çš„PEï¿½???
+			int pe_num = (i < shorter) ? (i + 1) : ((i < longer) ? shorter : (a_size + b_size - 1 - i));
 
-			systolic_array_inner_loop:
+		systolic_array_inner_loop:
 			for (int j = 0; j < pe_num; j++)
 			{
-				// TODO: »ñÈ¡µ±Ç°PEµÄ×ø±ê
-				???
-				
-				// TODO: »ñÈ¡µ±Ç°PEµÄ×ó²àÊäÈëaºÍÉÏ·½ÊäÈëb
-				???
+				// è·å–å½“å‰PEçš„åï¿½???
+				int row = (i < a_size) ? i - j : a_size - 1 - j;
+				int col = (i < b_size) ? j : j + i - b_size + 1;
 
-				// TODO: ÀûÓÃaºÍb¸üĞÂPE
-				???
+				// è·å–å½“å‰PEçš„å·¦ä¾§è¾“å…¥aå’Œä¸Šæ–¹è¾“å…¥b
+				T a_in = (col == 0) ? a_vec[row] : pe[row][col - 1].a;
+				T b_in = (row == 0) ? b_vec[col] : pe[row - 1][col].b;
+
+				// åˆ©ç”¨aå’Œbæ›´æ–°PE
+				pe[row][col].process(a_in, b_in);
 			}
 		}
 	}
 };
 
-// Âö¶¯ÕóÁĞ±¾ÁĞ
+// è„‰åŠ¨é˜µåˆ—æœ¬åˆ—
 Systolic_Array<DataType, SIDE_LEN> systolic_matrix;
 
 void gemm_kernel(int piece_a_cell, int piece_b_cell, int row, int col, int col1, int ori_col1, DataType din_a[], DataType din_b[])
 {
 	systolic_matrix.reset(row, col1);
 
-	// Âö¶¯ÕóÁĞË®Æ½·½ÏòµÄÊäÈëÏòÁ¿¡¢ÊúÖ±·½ÏòµÄÊäÈëÏòÁ¿
+	// è„‰åŠ¨é˜µåˆ—æ°´å¹³æ–¹å‘çš„è¾“å…¥å‘é‡ï¿½?ï¿½ç«–ç›´æ–¹å‘çš„è¾“å…¥å‘é‡
 	DataType a_vec[SIDE_LEN], b_vec[SIDE_LEN];
 
-	// TODO: ¼ÆËãÂö¶¯ÕóÁĞ¼ÆËãÍê³ÉÊ±£¬Âö²«ĞèÒªÌø¶¯µÄ´ÎÊı
-	int total_pulse = ???;
+	// è®¡ç®—è„‰åŠ¨é˜µåˆ—è®¡ç®—å®Œæˆæ—¶ï¼Œè„‰æï¿½???è¦è·³åŠ¨çš„æ¬¡æ•°
+	int total_pulse = row + col1 - 1 + col - 1;
 
-	gemm_outer_loop:
+gemm_outer_loop:
 	for (int i = 0; i < total_pulse; i++)
 	{
-		gemm_inner_loop:
+	gemm_inner_loop:
 		for (int j = 0; j < SIDE_LEN; j++)
 		{
-			int a_index = piece_a_cell*col + j*col + i - j;
-			int b_index = (i - j)*ori_col1 + j + piece_b_cell;
+			int a_index = piece_a_cell * col + j * col + i - j;
+			int b_index = (i - j) * ori_col1 + j + piece_b_cell;
 
-			// TODO: ÖğÒ»»ñÈ¡Âö¶¯ÕóÁĞÊäÈëÏòÁ¿µÄ¸÷¸öÔªËØ
-			a_vec[j] = (???) ? din_a[a_index] : 0;
-			b_vec[j] = (???) ? din_b[b_index] : 0;
+			// é€ä¸€è·å–è„‰åŠ¨é˜µåˆ—è¾“å…¥å‘é‡çš„å„ä¸ªå…ƒï¿½???
+			a_vec[j] = (j < row && i - j >= 0 && i - j < col) ? din_a[a_index] : DataType(0);
+			b_vec[j] = (j < col1 && i - j >= 0 && i - j < col) ? din_b[b_index] : DataType(0);
 		}
 
-		// TODO: Âö²«Ìø¶¯
-		???
+		// æ”¹ç”¨å®Œæ•´è„‰æå‡½æ•°
+		systolic_matrix.pulse(a_vec, b_vec);
 	}
 }
 
-// ½«Âö¶¯ÕóÁĞ¼ÆËã½á¹û¿½±´µ½Êä³ö¶Ë
+// å°†è„‰åŠ¨é˜µåˆ—è®¡ç®—ç»“æœæ‹·è´åˆ°è¾“å‡ºï¿½???
 void copy_result(int piece_a_cell, int piece_b_cell, int row, int col1, int ori_col1, DataType bias[], DataType out[])
 {
-	// TODO
-	???
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col1; j++)
+		{
+			int out_index = (piece_a_cell + i) * ori_col1 + piece_b_cell + j;
+			out[out_index] = systolic_matrix.pe[i][j].val + bias[piece_a_cell + i];
+		}
+	}
 }
 
 // THIS IS THE TOP LEVEL DESIGN THAT WILL BE SYNTHESIZED (Size-Free version)
 void systolic_array(ap_uint<16> row, ap_uint<16> col, ap_uint<16> col1, DataType din_a[], DataType din_b[], DataType bias[], DataType out[])
 {
-#pragma HLS INTERFACE s_axilite port=return
-#pragma HLS INTERFACE s_axilite port=row
-#pragma HLS INTERFACE s_axilite port=col
-#pragma HLS INTERFACE s_axilite port=col1
-#pragma HLS INTERFACE m_axi depth=4294967295 port=din_a offset=slave
-#pragma HLS INTERFACE m_axi depth=4294967295 port=din_b offset=slave
-#pragma HLS INTERFACE m_axi depth=4294967295 port=bias  offset=slave
-#pragma HLS INTERFACE m_axi depth=4294967295 port=out   offset=slave
+#pragma HLS INTERFACE s_axilite port = return
+#pragma HLS INTERFACE s_axilite port = row
+#pragma HLS INTERFACE s_axilite port = col
+#pragma HLS INTERFACE s_axilite port = col1
+#pragma HLS INTERFACE m_axi depth = 4294967295 port = din_a offset = slave
+#pragma HLS INTERFACE m_axi depth = 4294967295 port = din_b offset = slave
+#pragma HLS INTERFACE m_axi depth = 4294967295 port = bias offset = slave
+#pragma HLS INTERFACE m_axi depth = 4294967295 port = out offset = slave
 
-//	int piece_a = (int)ceil((float)row/SIDE_LEN);
-//	int piece_b = (int)ceil((float)col1/SIDE_LEN);
-	int piece_a = row/SIDE_LEN + (row%SIDE_LEN > 0);		// ¼ÆËã³Ë·¨×ó²àµÄÊäÈë¾ØÕóĞèÒª°´ĞĞÇĞ³É¼¸¿é
-	int piece_b = col1/SIDE_LEN + (col1%SIDE_LEN > 0);		// ¼ÆËã³Ë·¨ÓÒ²àµÄÊäÈë¾ØÕóĞèÒª°´ÁĞÇĞ³É¼¸¿é
+	//	int piece_a = (int)ceil((float)row/SIDE_LEN);
+	//	int piece_b = (int)ceil((float)col1/SIDE_LEN);
+	int piece_a = row / SIDE_LEN + (row % SIDE_LEN > 0);	 // è®¡ç®—ä¹˜æ³•å·¦ä¾§çš„è¾“å…¥çŸ©é˜µéœ€è¦æŒ‰è¡Œåˆ‡æˆå‡ ï¿½???
+	int piece_b = col1 / SIDE_LEN + (col1 % SIDE_LEN > 0); // è®¡ç®—ä¹˜æ³•å³ä¾§çš„è¾“å…¥çŸ©é˜µéœ€è¦æŒ‰åˆ—åˆ‡æˆå‡ ï¿½???
 	int piece_a_row, piece_b_col, piece_a_cell, piece_b_cell;
 
 #pragma HLS DATAFLOW
-	top_outer_loop:
+top_outer_loop:
 	for (int i = 0; i < piece_a; i++)
 	{
 		// Get piece index of array a
-		piece_a_cell = i*SIDE_LEN;
-		// TODO: ¼ÆËãµ±Ç°·Ö¿éµÄĞĞÊı
-		piece_a_row = ???
+		piece_a_cell = i * SIDE_LEN;
+		// è®¡ç®—å½“å‰åˆ†å—çš„è¡Œï¿½???
+		piece_a_row = (i < piece_a - 1 || row % SIDE_LEN == 0) ? SIDE_LEN : (int)(row % SIDE_LEN);
 
-		top_inner_loop:
+	top_inner_loop:
 		for (int j = 0; j < piece_b; j++)
 		{
 			// Get piece index of array b
-			piece_b_cell = j*SIDE_LEN;
-			// TODO: ¼ÆËãµ±Ç°·Ö¿éµÄÁĞÊı
-			piece_b_col = ???
+			piece_b_cell = j * SIDE_LEN;
+			// è®¡ç®—å½“å‰åˆ†å—çš„åˆ—ï¿½???
+			piece_b_col = (j < piece_b - 1 || col1 % SIDE_LEN == 0) ? SIDE_LEN : (int)(col1 % SIDE_LEN);
 
 			// Using gemm kernel to perform matrix multiplication
 			gemm_kernel(piece_a_cell, piece_b_cell, piece_a_row, col, piece_b_col, col1, din_a, din_b);
@@ -193,46 +203,52 @@ void systolic_array(ap_uint<16> row, ap_uint<16> col, ap_uint<16> col1, DataType
 }
 
 // THIS IS THE TOP LEVEL DESIGN THAT WILL BE SYNTHESIZED (Size-Limited version)
-void systolic_array(ap_uint<16> row, ap_uint<16> col, ap_uint<16> col1, DataType din_a[], DataType din_b[], DataType bias[], DataType out[])
+void systolic_array_limited(ap_uint<16> row, ap_uint<16> col, ap_uint<16> col1, DataType din_a[], DataType din_b[], DataType bias[], DataType out[])
 {
-#pragma HLS INTERFACE s_axilite port=return
-#pragma HLS INTERFACE s_axilite port=row
-#pragma HLS INTERFACE s_axilite port=col
-#pragma HLS INTERFACE s_axilite port=col1
-#pragma HLS INTERFACE m_axi depth=4294967295 port=din_a offset=slave
-#pragma HLS INTERFACE m_axi depth=4294967295 port=din_b offset=slave
-#pragma HLS INTERFACE m_axi depth=4294967295 port=bias  offset=slave
-#pragma HLS INTERFACE m_axi depth=4294967295 port=out   offset=slave
+#pragma HLS INTERFACE s_axilite port = return
+#pragma HLS INTERFACE s_axilite port = row
+#pragma HLS INTERFACE s_axilite port = col
+#pragma HLS INTERFACE s_axilite port = col1
+#pragma HLS INTERFACE m_axi depth = 4294967295 port = din_a offset = slave
+#pragma HLS INTERFACE m_axi depth = 4294967295 port = din_b offset = slave
+#pragma HLS INTERFACE m_axi depth = 4294967295 port = bias offset = slave
+#pragma HLS INTERFACE m_axi depth = 4294967295 port = out offset = slave
 
 	systolic_matrix.reset();
 
-	// Âö¶¯ÕóÁĞË®Æ½·½ÏòµÄÊäÈëÏòÁ¿¡¢ÊúÖ±·½ÏòµÄÊäÈëÏòÁ¿
+	// è„‰åŠ¨é˜µåˆ—æ°´å¹³æ–¹å‘çš„è¾“å…¥å‘é‡ï¿½?ï¿½ç«–ç›´æ–¹å‘çš„è¾“å…¥å‘é‡
 	DataType a_vec[SIDE_LEN], b_vec[SIDE_LEN];
 
-	// TODO: ¼ÆËãÂö¶¯ÕóÁĞ¼ÆËãÍê³ÉÊ±£¬Âö²«ĞèÒªÌø¶¯µÄ´ÎÊı
-	int total_pulse = ???;
+	// è®¡ç®—è„‰åŠ¨é˜µåˆ—è®¡ç®—å®Œæˆæ—¶ï¼Œè„‰æï¿½???è¦è·³åŠ¨çš„æ¬¡æ•°
+	int total_pulse = row + col1 - 1 + col - 1;
 
-	top_outer_loop1:
+top_outer_loop1:
 	for (int i = 0; i < total_pulse; i++)
 	{
-		top_inner_loop1:
+	top_inner_loop1:
 		for (int j = 0; j < SIDE_LEN; j++)
 		{
-			int a_index = j*col + i - j;
-			int	b_index = (i - j)*col1 + j;
+			int a_index = j * col + i - j;
+			int b_index = (i - j) * col1 + j;
 
-			// TODO: ÖğÒ»»ñÈ¡Âö¶¯ÕóÁĞÊäÈëÏòÁ¿µÄ¸÷¸öÔªËØ
-			a_vec[j] = (???) ? din_a[a_index] : 0;
-			b_vec[j] = (???) ? din_b[b_index] : 0;
+			// é€ä¸€è·å–è„‰åŠ¨é˜µåˆ—è¾“å…¥å‘é‡çš„å„ä¸ªå…ƒï¿½???
+			a_vec[j] = (j < row && i - j >= 0 && i - j < col) ? din_a[a_index] : DataType(0);
+			b_vec[j] = (j < col1 && i - j >= 0 && i - j < col) ? din_b[b_index] : DataType(0);
 		}
 
-		// Âö²«Ìø¶¯
+		// è„‰æè·³åŠ¨
 		systolic_matrix.pulse(a_vec, b_vec);
 	}
 
-	// TODO: ½«Âö¶¯ÕóÁĞ¼ÆËã½á¹û¿½±´µ½Êä³ö¶Ë
+	// å°†è„‰åŠ¨é˜µåˆ—è®¡ç®—ç»“æœæ‹·è´åˆ°è¾“å‡ºï¿½???
 	int ROW = ((int)row < SIDE_LEN) ? (int)row : SIDE_LEN;
 	int COL = ((int)col1 < SIDE_LEN) ? (int)col1 : SIDE_LEN;
 
-	???
+	for (int i = 0; i < ROW; i++)
+	{
+		for (int j = 0; j < COL; j++)
+		{
+			out[i * col1 + j] = systolic_matrix.pe[i][j].val + bias[i];
+		}
+	}
 }
